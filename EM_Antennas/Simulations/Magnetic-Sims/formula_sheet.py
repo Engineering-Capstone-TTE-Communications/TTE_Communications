@@ -1,6 +1,0 @@
-
-
-
-#Maxwells Equations
-#Differential Form
-
