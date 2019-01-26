@@ -23,7 +23,7 @@ int led_pin = 6;//can read & tx on the same pin since same device...hmmm
 const int Tb = 50;//Micros
 const int max_buffer_characters = 128;
 float bit_length_variance = .1; //perhaps for whatever error, Tb = \pm 10%;
-const byte preamble = 0xe5;
+const byte_in preamble = 0xe5;
 
 /*=================================================================
     ____            __           _                _    __           _       __    __         
@@ -42,16 +42,16 @@ char outgoing_message_buffer[max_buffer_size];
 char incoming_message_buffer[max_buffer_size];
 
 bool new_data,recieving,currently_transmitting,start_payload;
-byte outgoing_preamble_index = 0x80;
+byte_in outgoing_preamble_index = 0x80;
 char * message_ptr;
 char end_transmission_char = '^';
 int incoming_char_index;
 int rx_reg;
 bool recieving_preamble,reply_with_error;
 int preamble_length = sizeof(preamble)*8;
-bool preamble_start_bit = preamble & (byte) pow(2,preamble_length-1);
-byte percieved_preamble_index;
-byte input_data;
+bool preamble_start_bit = preamble & (byte_in) pow(2,preamble_length-1);
+byte_in percieved_preamble_index;
+byte_in input_data;
 bool expected_bit;
 
 bool end_of_transmission_sending;
@@ -59,11 +59,11 @@ bool in_recieving_phase,in_sending_phase,sending_preamble,sending_payload;
 unsigned long last_send_us,last_recieve_us,current_us;
 
     
-byte received_data;
+byte_in received_data;
 int data_lengths_in_bits = sizeof(received_data)*8;
 int percieved_payload_index = 0x80;
 int tx_over_cnt;
-int serial_bytes_available;
+int serial_byte_ins_available;
 int message_ptr_bit_index;
 bool recieving_payload;
 bool last_recieved_bit;
@@ -100,9 +100,9 @@ void setup() {
 =================================================================*/
 
 void recieve_serial_data(){
-    serial_bytes_available = Serial.available();
+    serial_byte_ins_available = Serial.available();
 
-    if (serial_bytes_available > 0){
+    if (serial_byte_ins_available > 0){
       new_data = true;
       in_sending_phase = true;
       sending_preamble = true;
@@ -138,7 +138,7 @@ int BW = 1000;
 unsigned long Tb = 1/(BW/M)*pow(10,6);
 float sine_val;
 unsigned long data_frequency;
-byte current_symbol;
+byte_in current_symbol;
 
 void transmit_sine(unsigned long sin_frequency){  
   sine_val = sin(2*PI*sin_frequency*(micros()*pow(10,-6)));
@@ -151,7 +151,7 @@ void update_MFSK(){
   transmit_sine(data_frequency);
 }
 
-void transmit_nibble(byte nibble){
+void transmit_nibble(byte_in nibble){
     current_symbol = nibble;
     set_send_time();
 }
@@ -194,7 +194,7 @@ void stop_transmitting(){
 /*=================================================================*/
 
 bool revicieved_bit;
-byte message_nibble;
+byte_in message_nibble;
 
 void update_symbol(){
     if(in_send_timeout()){
