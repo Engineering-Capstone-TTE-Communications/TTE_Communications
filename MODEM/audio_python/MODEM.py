@@ -124,7 +124,7 @@ class audible_MODEM:
 
     def get_performance_stats(self,silence_output):  
         self.sym_err_ratio = self.sym_error_ctr/self.sym_io_ctr
-        stats_msg = ['N_bits I/O = '+str(self.sym_io_ctr)]
+        stats_msg = ['N_syms I/O = '+str(self.sym_io_ctr)]
         stats_msg.append('Symbol Error Ratio = '+ str(self.sym_err_ratio))
         
         if(self.sym_correct_ctr/self.sym_io_ctr <= .6):
@@ -220,30 +220,56 @@ class audible_MODEM:
         
         if(performance_stats):
             self.reset_set_performance_stats() 
+        faketime = time.monotonic()
 
         syms_per_iter = (np.ceil(8/self.N_bits)*self.N_consecutive_syms)
-        for sym_count in np.arange(0,num_syms,syms_per_iter):
+        for sym_count in np.arange(0,num_syms+1,syms_per_iter):
             tx = self.get_tx_symbols(self.N_consecutive_syms)#number of symbols can be tweaked
+            if(sym_count == num_syms):
+                tx.append(0)
+                ref_io_cnt = self.sym_io_ctr 
+
             rx_dat = []
+            
             for tx_sym in tx:
                 tx_phy = self.get_tx_phy(tx_sym)
                 self.sym_io_ctr = self.sym_io_ctr +1
                 
                 #if(self.sym_io_ctr > 1):
                 #    sd.wait()
+                #sd.stop()
 
-                tx_phy = sd.playrec(tx_phy, fs, channels=1)
-                #if(self.sym_io_ctr == 1):
-                sd.wait()
-                
-                [decision_data, best_decision_integral] = self.demodulate_data(tx_phy)
-                
-                rx_dat.append(decision_data)
+                #print(time.monotonic()-faketime)
+                faketime = time.monotonic()
 
-                if tx_sym == int(decision_data):
+                #print(self.sym_io_ctr)
+                if(self.sym_io_ctr == 1): #get the first going so u can speed run
+                    #rx_phy = tx_phy
+                    rx_phy = sd.playrec(tx_phy, fs, channels=1)
+                    prev_tx_sym = tx_sym
+                    sd.wait()
+                    continue
+                #elif(self.sym_io_ctr == num_syms): #Just Process the last (no more syms anyway)
+                elif(sym_count == num_syms and self.sym_io_ctr - ref_io_cnt == len(tx)):
+                    rx_phy_prev = rx_phy
+                    self.sym_io_ctr = self.sym_io_ctr-1
+                else:
+                    sd.wait() #processed last bit & still txin
+                    rx_phy_prev = rx_phy
+                    #rx_phy = tx_phy
+                    rx_phy = sd.playrec(tx_phy, fs, channels=1)
+
+                [decision_data, best_decision_integral] = self.demodulate_data(rx_phy_prev)
+                
+                #print(prev_tx_sym,decision_data)
+                if prev_tx_sym == int(decision_data):
                     self.sym_correct_ctr = self.sym_correct_ctr + 1
                 else:
                     self.sym_error_ctr =  self.sym_error_ctr + 1
+                
+                prev_tx_sym = tx_sym
+                rx_dat.append(decision_data)
+
             self.write_output_data(rx_dat)
         self.get_performance_stats(performance_stats)
 
@@ -257,5 +283,5 @@ if __name__ == "__main__":
     data_out_filename = 'memes.html'
 
     r2d2 = audible_MODEM(M,data_in_filename,data_out_filename,Tb,f_space_scalar,fs,f_min)   
-    r2d2.MODEM(100,0)
+    r2d2.MODEM(1000,0)
     #print('dunion rings')
