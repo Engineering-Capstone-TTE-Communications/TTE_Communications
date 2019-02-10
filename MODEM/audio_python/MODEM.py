@@ -4,6 +4,8 @@ import binascii
 import time
 import math 
 
+sd.default.device = 'GUADT51'   
+
 class audible_MODEM:
 
 
@@ -232,11 +234,11 @@ class audible_MODEM:
                 #if(self.sym_io_ctr > 1):
                 #    sd.wait()
 
-                tx_phy = sd.playrec(tx_phy, fs, channels=1)
+                rx_phy = sd.playrec(tx_phy, fs, channels=1)
                 #if(self.sym_io_ctr == 1):
                 sd.wait()
                 
-                [decision_data, best_decision_integral] = self.demodulate_data(tx_phy)
+                [decision_data, best_decision_integral] = self.demodulate_data(rx_phy)
                 
                 rx_dat.append(decision_data)
 
@@ -256,6 +258,7 @@ if __name__ == "__main__":
     data_in_filename = 'sample.html'
     data_out_filename = 'memes.html'
 
+
     r2d2 = audible_MODEM(M,data_in_filename,data_out_filename,Tb,f_space_scalar,fs,f_min)   
-    r2d2.MODEM(100,0)
+    r2d2.MODEM(1000,0)
     #print('dunion rings')
