@@ -45,7 +45,7 @@ void loop() {
   Serial.print("ADC_channel_select:");
   Serial.print(adc_num);
   Serial.print(":");
-  Serial.println(read_adc(1,0));
+  Serial.println(read_adc(adc_num,0));
 
   // do whatever you want with these readings
 
