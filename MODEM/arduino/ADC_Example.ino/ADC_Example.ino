@@ -5,21 +5,19 @@
 
 long ticks = 0;
 
-//HW
-#define N_LOAD_DAC 8    // chip-select
-#define SPI_CS_ADC 6    // chip-select
-#define SPI_CS_DAC 7    // chip-select
+//Hardware Pins
+#define N_LOAD_DAC 8    
+#define SPI_CS_ADC 6    
+#define SPI_CS_DAC 7    
 
 #define SPI_MOSI 11   // MOSI 
 #define SPI_MISO 12    // MISO 
 #define SPI_CLK 13  // Clock
 
-//SPI
+//IC SPI Protocol
 #define ADC_CONTROL_START_BIT              0b00001000
 #define ADC_CONTROL_SINGLE_ENDED_INPUT_BIT 0b00000100
-
 #define ADC_CONTROL_SIGN_BIT 0b00010000
-
 
 #define DAC_CONTROL_SEQUENCE 0b0011 //Be careful in adjusting this
 //https://datasheet.octopart.com/MCP4901-E/P-Microchip-datasheet-8699943.pdf
@@ -39,7 +37,13 @@ void setup(){
   digitalWrite(SPI_CS_DAC, HIGH); 
   digitalWrite(N_LOAD_DAC, HIGH); 
 
-  SPI.setClockDivider( SPI_CLOCK_DIV16 ); // slow the SPI bus down
+  SPI.setClockDivider( SPI_CLOCK_DIV16 ); 
+  //There is an absolute maximum SPI bus clk frequency for the ADC (<2MHz)
+  //(DAC too but it's limit is much higher)
+  //Adjust the divisor based on your arduinos clock
+  
+  //SPI.setClockDivider(SPI_CLOCK_DIV2); //For 2MHz system clk
+  
   SPI.setBitOrder(MSBFIRST);
   SPI.setDataMode(SPI_MODE0);    // SPI 0,0 as per MCP330x data sheet 
   SPI.begin();
@@ -74,6 +78,11 @@ void loop() {
     }
 }
 
+//Both SPI interfaces could be optimized by moving away from the hardware SPI arduino Library
+//And writing to each pin manually.
+//The SPI library requires sending in 8 bit chunks, but for both ICs this results in extra bits
+//Being spend and thus lower sampling rates
+
 void write_dac(byte DAC_data){
   //Reference https://datasheet.octopart.com/MCP4901-E/P-Microchip-datasheet-8699943.pdf
   //Pg 24
@@ -88,7 +97,6 @@ void write_dac(byte DAC_data){
       
       digitalWrite (SPI_CS_DAC, HIGH); //Disable DAC Control
       digitalWrite(N_LOAD_DAC, LOW); 
-
 }
 
 int read_adc(byte channel_select){  
