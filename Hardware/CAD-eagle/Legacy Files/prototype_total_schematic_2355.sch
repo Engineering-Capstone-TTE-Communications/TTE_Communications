@@ -4479,26 +4479,22 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <part name="R24" library="SparkFun-Resistors" deviceset="2.0KOHM" device="-0603-1/10W-5%" value="0"/>
 <part name="C2" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="100n"/>
 <part name="U7" library="TTE" deviceset="NX3L2467" device="PW"/>
+<part name="C5" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="100nF"/>
 <part name="C6" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="100nF"/>
 <part name="D2" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="ZENER-DIODE" device="SMB" package3d_urn="urn:adsk.eagle:package:43404/2"/>
 <part name="D1" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="ZENER-DIODE" device="SMB" package3d_urn="urn:adsk.eagle:package:43404/2"/>
 <part name="LED4" library="microbuilder" deviceset="LED" device="0805" value="RGB"/>
 <part name="R2" library="SparkFun-Resistors" deviceset="2.0KOHM" device="-0603-1/10W-5%" value="330"/>
 <part name="SUPPLY2" library="SparkFun-PowerSymbols" deviceset="VCC" device=""/>
-<part name="C3" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="100nF"/>
-<part name="R7" library="SparkFun-Resistors" deviceset="2.0KOHM" device="-0603-1/10W-5%" value="442"/>
-<part name="R8" library="SparkFun-Resistors" deviceset="2.0KOHM" device="-0603-1/10W-5%" value="442"/>
-<part name="R9" library="SparkFun-Resistors" deviceset="2.0KOHM" device="-0603-1/10W-5%" value="442"/>
-<part name="R16" library="SparkFun-Resistors" deviceset="2.0KOHM" device="-0603-1/10W-5%" value="442"/>
 </parts>
 <sheets>
 <sheet>
 <description>Peripherals</description>
 <plain>
 <wire x1="-185.42" y1="106.68" x2="-22.86" y2="106.68" width="0.508" layer="98"/>
-<wire x1="-22.86" y1="106.68" x2="-22.86" y2="12.7" width="0.508" layer="98"/>
-<wire x1="-22.86" y1="12.7" x2="-185.42" y2="12.7" width="0.508" layer="98"/>
-<wire x1="-185.42" y1="12.7" x2="-185.42" y2="106.68" width="0.508" layer="98"/>
+<wire x1="-22.86" y1="106.68" x2="-22.86" y2="15.24" width="0.508" layer="98"/>
+<wire x1="-22.86" y1="15.24" x2="-185.42" y2="15.24" width="0.508" layer="98"/>
+<wire x1="-185.42" y1="15.24" x2="-185.42" y2="106.68" width="0.508" layer="98"/>
 <text x="-180.34" y="93.98" size="6.4516" layer="98">Antenna Connection, Duplexing &amp; TVS</text>
 <text x="68.58" y="-48.26" size="1.27" layer="150">ID Left floating for slave OTG
 as per https://en.wikipedia.org/wiki/USB_On-The-Go</text>
@@ -4520,7 +4516,7 @@ https://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_FT230X.pdf</text>
 <wire x1="-271.78" y1="-7.62" x2="-271.78" y2="-116.84" width="0.508" layer="98"/>
 <wire x1="-271.78" y1="-116.84" x2="33.02" y2="-116.84" width="0.508" layer="98"/>
 <wire x1="33.02" y1="-116.84" x2="33.02" y2="-7.62" width="0.508" layer="98"/>
-<text x="-177.8" y="55.88" size="1.778" layer="98">Looks a little weird but trace through the signal names </text>
+<text x="-177.8" y="50.8" size="1.778" layer="98">Looks a little weird but trace through the signal names </text>
 <text x="-22.86" y="-60.96" size="1.778" layer="98">ADC</text>
 <text x="-88.9" y="68.58" size="1.778" layer="98">Some 3V3 Zeners</text>
 <text x="-2.54" y="58.42" size="2.54" layer="98">8 Pole Adjustable Fc Chebyshev
@@ -4529,11 +4525,6 @@ fclk = 750kHz
 fc = ~15kHz</text>
 <text x="-22.86" y="-78.74" size="1.778" layer="98">DAC</text>
 <text x="-175.26" y="-22.86" size="1.778" layer="98">Unused pins do not need to be connected to anything</text>
-<text x="-182.88" y="12.7" size="1.778" layer="98">Current Limiting Resistors, solder in as appropriate since as f-&gt; 0, Z_L -&gt; 0
-1 -&gt; 7.5mA SC
-2 in -&gt; 15mA SC
-4 in  -&gt; 30mA SC
-</text>
 </plain>
 <instances>
 <instance part="IC5" gate="G$1" x="99.06" y="-76.2" rot="MR0"/>
@@ -4568,17 +4559,13 @@ fc = ~15kHz</text>
 <instance part="C15" gate="G$1" x="35.56" y="55.88" rot="R180"/>
 <instance part="C16" gate="G$1" x="43.18" y="48.26" rot="R180"/>
 <instance part="U7" gate="G$1" x="-78.74" y="43.18"/>
+<instance part="C5" gate="G$1" x="-124.46" y="43.18" rot="MR90"/>
 <instance part="C6" gate="G$1" x="-58.42" y="63.5" rot="MR270"/>
 <instance part="D2" gate="G$1" x="-78.74" y="73.66" rot="MR0"/>
 <instance part="D1" gate="G$1" x="-78.74" y="78.74" rot="MR0"/>
 <instance part="LED4" gate="G$1" x="-256.54" y="-93.98"/>
 <instance part="R2" gate="G$1" x="-264.16" y="-83.82" rot="R90"/>
 <instance part="SUPPLY2" gate="G$1" x="-264.16" y="-76.2"/>
-<instance part="C3" gate="G$1" x="-121.92" y="45.72" rot="MR90"/>
-<instance part="R7" gate="G$1" x="-109.22" y="35.56" rot="R90"/>
-<instance part="R8" gate="G$1" x="-101.6" y="35.56" rot="R90"/>
-<instance part="R9" gate="G$1" x="-93.98" y="35.56" rot="R90"/>
-<instance part="R16" gate="G$1" x="-116.84" y="35.56" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -4856,24 +4843,6 @@ fc = ~15kHz</text>
 <pinref part="D1" gate="G$1" pin="A"/>
 <label x="-71.12" y="76.2" size="1.778" layer="95"/>
 </segment>
-<segment>
-<pinref part="R7" gate="G$1" pin="1"/>
-<wire x1="-109.22" y1="30.48" x2="-109.22" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="-109.22" y1="27.94" x2="-101.6" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="R9" gate="G$1" pin="1"/>
-<wire x1="-101.6" y1="27.94" x2="-93.98" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="-93.98" y1="27.94" x2="-93.98" y2="30.48" width="0.1524" layer="91"/>
-<pinref part="R8" gate="G$1" pin="1"/>
-<wire x1="-101.6" y1="30.48" x2="-101.6" y2="27.94" width="0.1524" layer="91"/>
-<junction x="-101.6" y="27.94"/>
-<wire x1="-101.6" y1="27.94" x2="-101.6" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="-101.6" y1="22.86" x2="-96.52" y2="22.86" width="0.1524" layer="91"/>
-<label x="-99.06" y="22.86" size="1.778" layer="95"/>
-<pinref part="R16" gate="G$1" pin="1"/>
-<wire x1="-116.84" y1="30.48" x2="-116.84" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="-116.84" y1="27.94" x2="-109.22" y2="27.94" width="0.1524" layer="91"/>
-<junction x="-109.22" y="27.94"/>
-</segment>
 </net>
 <net name="ID" class="0">
 <segment>
@@ -4890,11 +4859,8 @@ fc = ~15kHz</text>
 </segment>
 <segment>
 <pinref part="IC5" gate="G$1" pin="VCC"/>
-<wire x1="83.82" y1="-78.74" x2="68.58" y2="-78.74" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="-78.74" x2="71.12" y2="-78.74" width="0.1524" layer="91"/>
 <label x="71.12" y="-78.74" size="1.27" layer="95"/>
-<pinref part="IC5" gate="G$1" pin="3V3OUT"/>
-<wire x1="83.82" y1="-83.82" x2="68.58" y2="-83.82" width="0.1524" layer="91"/>
-<wire x1="68.58" y1="-83.82" x2="68.58" y2="-78.74" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="CTS_BAR" class="0">
@@ -4927,6 +4893,15 @@ fc = ~15kHz</text>
 </segment>
 </net>
 <net name="RESET_BAR" class="0">
+<segment>
+<pinref part="IC5" gate="G$1" pin="!RESET"/>
+<wire x1="83.82" y1="-81.28" x2="71.12" y2="-81.28" width="0.1524" layer="91"/>
+<label x="71.12" y="-81.28" size="1.27" layer="95"/>
+<pinref part="IC5" gate="G$1" pin="3V3OUT"/>
+<wire x1="83.82" y1="-83.82" x2="71.12" y2="-83.82" width="0.1524" layer="91"/>
+<label x="71.12" y="-83.82" size="1.27" layer="95"/>
+<wire x1="71.12" y1="-81.28" x2="71.12" y2="-83.82" width="0.1524" layer="91"/>
+</segment>
 <segment>
 <pinref part="IC5" gate="G$1" pin="VCCIO"/>
 <wire x1="114.3" y1="-73.66" x2="152.4" y2="-73.66" width="0.1524" layer="91"/>
@@ -5037,24 +5012,6 @@ fc = ~15kHz</text>
 <wire x1="-81.28" y1="78.74" x2="-88.9" y2="78.74" width="0.1524" layer="91"/>
 <pinref part="D1" gate="G$1" pin="C"/>
 <label x="-88.9" y="78.74" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="U7" gate="G$1" pin="2Y1"/>
-<wire x1="-88.9" y1="43.18" x2="-93.98" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="R7" gate="G$1" pin="2"/>
-<wire x1="-93.98" y1="43.18" x2="-101.6" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="-101.6" y1="43.18" x2="-109.22" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="-109.22" y1="40.64" x2="-109.22" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="R8" gate="G$1" pin="2"/>
-<wire x1="-101.6" y1="40.64" x2="-101.6" y2="43.18" width="0.1524" layer="91"/>
-<junction x="-101.6" y="43.18"/>
-<pinref part="R9" gate="G$1" pin="2"/>
-<wire x1="-93.98" y1="40.64" x2="-93.98" y2="43.18" width="0.1524" layer="91"/>
-<junction x="-93.98" y="43.18"/>
-<wire x1="-109.22" y1="43.18" x2="-116.84" y2="43.18" width="0.1524" layer="91"/>
-<junction x="-109.22" y="43.18"/>
-<pinref part="R16" gate="G$1" pin="2"/>
-<wire x1="-116.84" y1="43.18" x2="-116.84" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="FILTER_IN" class="0">
@@ -5266,16 +5223,23 @@ fc = ~15kHz</text>
 <wire x1="-231.14" y1="-71.12" x2="-243.84" y2="-71.12" width="0.1524" layer="91"/>
 </segment>
 </net>
+<net name="N$5" class="0">
+<segment>
+<pinref part="C5" gate="G$1" pin="1"/>
+<wire x1="-119.38" y1="43.18" x2="-88.9" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="U7" gate="G$1" pin="2Y1"/>
+</segment>
+</net>
 <net name="RX_INPUT_-_DECOUPLED" class="0">
+<segment>
+<wire x1="-127" y1="43.18" x2="-147.32" y2="43.18" width="0.1524" layer="91"/>
+<label x="-139.7" y="45.72" size="1.778" layer="95" rot="R180"/>
+<pinref part="C5" gate="G$1" pin="2"/>
+</segment>
 <segment>
 <pinref part="U$5" gate="A" pin="P3.2/OA2-"/>
 <label x="-261.62" y="-58.42" size="1.778" layer="95"/>
 <wire x1="-231.14" y1="-58.42" x2="-243.84" y2="-58.42" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<wire x1="-124.46" y1="45.72" x2="-144.78" y2="45.72" width="0.1524" layer="91"/>
-<label x="-137.16" y="48.26" size="1.778" layer="95" rot="R180"/>
-<pinref part="C3" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="FILTER_PGA_TX_OUT" class="0">
@@ -5300,13 +5264,6 @@ fc = ~15kHz</text>
 <wire x1="-261.62" y1="-93.98" x2="-259.08" y2="-93.98" width="0.1524" layer="91"/>
 <wire x1="-261.62" y1="-93.98" x2="-264.16" y2="-93.98" width="0.1524" layer="91"/>
 <pinref part="R2" gate="G$1" pin="1"/>
-</segment>
-</net>
-<net name="!RESET" class="0">
-<segment>
-<pinref part="IC5" gate="G$1" pin="!RESET"/>
-<wire x1="83.82" y1="-81.28" x2="71.12" y2="-81.28" width="0.1524" layer="91"/>
-<label x="71.12" y="-81.28" size="1.27" layer="95"/>
 </segment>
 </net>
 </nets>
