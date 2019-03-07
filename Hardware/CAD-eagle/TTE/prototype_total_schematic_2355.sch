@@ -4644,6 +4644,7 @@ chip</description>
 <part name="TXD" library="SparkFun-Connectors" deviceset="CONN_04" device="" value="455-1750-1-ND"/>
 <part name="VCC" library="SparkFun-Connectors" deviceset="CONN_04" device="" value="455-1750-1-ND"/>
 <part name="GND" library="SparkFun-Connectors" deviceset="CONN_04" device="" value="455-1750-1-ND"/>
+<part name="C7" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="22pF"/>
 </parts>
 <sheets>
 <sheet>
@@ -4752,6 +4753,7 @@ https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_ID=2888
 <instance part="TXD" gate="G$1" x="185.42" y="-93.98"/>
 <instance part="VCC" gate="G$1" x="185.42" y="-111.76"/>
 <instance part="GND" gate="G$1" x="185.42" y="-129.54"/>
+<instance part="C7" gate="G$1" x="-208.28" y="35.56" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -5017,7 +5019,7 @@ https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_ID=2888
 </segment>
 <segment>
 <pinref part="TM2" gate="G$1" pin="A"/>
-<wire x1="-154.94" y1="35.56" x2="-139.7" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="-154.94" y1="35.56" x2="-127" y2="35.56" width="0.1524" layer="91"/>
 <label x="-147.32" y="35.56" size="1.778" layer="95"/>
 </segment>
 <segment>
@@ -5173,14 +5175,14 @@ https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_ID=2888
 <label x="-73.66" y="-48.26" size="1.778" layer="95"/>
 </segment>
 <segment>
-<label x="-185.42" y="35.56" size="1.778" layer="95"/>
-<pinref part="TM2" gate="G$1" pin="E"/>
-<wire x1="-185.42" y1="35.56" x2="-165.1" y2="35.56" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <label x="177.8" y="-10.16" size="1.778" layer="95"/>
 <wire x1="177.8" y1="-10.16" x2="218.44" y2="-10.16" width="0.1524" layer="91"/>
 <pinref part="SIG" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="C7" gate="G$1" pin="1"/>
+<wire x1="-213.36" y1="35.56" x2="-238.76" y2="35.56" width="0.1524" layer="91"/>
+<label x="-238.76" y="35.56" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RX_PGA_1" class="0">
@@ -5341,6 +5343,14 @@ https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_ID=2888
 <pinref part="FT232RL" gate="G$1" pin="3V3OUT"/>
 <pinref part="FT232RL" gate="G$1" pin="VCCIO"/>
 <label x="60.96" y="-48.26" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="ANTENNA_TX_SIG_COUPLED" class="0">
+<segment>
+<label x="-200.66" y="35.56" size="1.778" layer="95"/>
+<pinref part="TM2" gate="G$1" pin="E"/>
+<pinref part="C7" gate="G$1" pin="2"/>
+<wire x1="-205.74" y1="35.56" x2="-165.1" y2="35.56" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
