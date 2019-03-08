@@ -4616,7 +4616,7 @@ chip</description>
 <part name="C3" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="22uF"/>
 <part name="TL069" library="TTE" deviceset="LTC1069-7CS8#PBF" device=""/>
 <part name="C4" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="470n"/>
-<part name="C5" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="100n"/>
+<part name="C5" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value=".1u"/>
 <part name="1K" library="microbuilder" deviceset="RESISTOR" device="0805" value="1k"/>
 <part name="47K" library="microbuilder" deviceset="RESISTOR" device="0805" value="47k"/>
 <part name="C6" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="1n"/>
@@ -4644,7 +4644,7 @@ chip</description>
 <part name="TXD" library="SparkFun-Connectors" deviceset="CONN_04" device="" value="455-1750-1-ND"/>
 <part name="VCC" library="SparkFun-Connectors" deviceset="CONN_04" device="" value="455-1750-1-ND"/>
 <part name="GND" library="SparkFun-Connectors" deviceset="CONN_04" device="" value="455-1750-1-ND"/>
-<part name="C7" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="22pF"/>
+<part name="C7" library="SparkFun-Capacitors" deviceset="22UF" device="-0805-6.3V-20%" value="22p"/>
 </parts>
 <sheets>
 <sheet>
@@ -5007,6 +5007,10 @@ https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_ID=2888
 </net>
 <net name="ANTENNA_SIG" class="0">
 <segment>
+<pinref part="TM2" gate="G$1" pin="A"/>
+<wire x1="-154.94" y1="35.56" x2="-104.14" y2="35.56" width="0.1524" layer="91"/>
+<label x="-147.32" y="35.56" size="1.778" layer="95"/>
+<wire x1="-104.14" y1="35.56" x2="-104.14" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="RIGHT_ANGLE_SMA_MALE" gate="A" pin="1"/>
 <label x="-144.78" y="60.96" size="1.778" layer="95"/>
 <pinref part="D1" gate="G$1" pin="C"/>
@@ -5016,11 +5020,8 @@ https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_ID=2888
 <junction x="-121.92" y="60.96"/>
 <wire x1="-121.92" y1="60.96" x2="-111.76" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="-111.76" y1="60.96" x2="-111.76" y2="58.42" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="TM2" gate="G$1" pin="A"/>
-<wire x1="-154.94" y1="35.56" x2="-127" y2="35.56" width="0.1524" layer="91"/>
-<label x="-147.32" y="35.56" size="1.778" layer="95"/>
+<wire x1="-104.14" y1="60.96" x2="-111.76" y2="60.96" width="0.1524" layer="91"/>
+<junction x="-111.76" y="60.96"/>
 </segment>
 <segment>
 <pinref part="MSP430" gate="A" pin="P3.3/OA2+"/>
@@ -5345,12 +5346,13 @@ https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_ID=2888
 <label x="60.96" y="-48.26" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="ANTENNA_TX_SIG_COUPLED" class="0">
+<net name="N$2" class="0">
 <segment>
-<label x="-200.66" y="35.56" size="1.778" layer="95"/>
-<pinref part="TM2" gate="G$1" pin="E"/>
 <pinref part="C7" gate="G$1" pin="2"/>
-<wire x1="-205.74" y1="35.56" x2="-165.1" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="-205.74" y1="35.56" x2="-177.8" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="-177.8" y1="35.56" x2="-177.8" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="TM2" gate="G$1" pin="S"/>
+<wire x1="-177.8" y1="40.64" x2="-160.02" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

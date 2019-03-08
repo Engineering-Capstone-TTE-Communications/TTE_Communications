@@ -22,7 +22,7 @@
   \____|\__,_|_|_| |_| |____/ \__\__,_|\__, |\___| |_|
                                        |___/
  * */
-
+//Abstracting pins is kinda pointless since we're using only 1 HW configuration like that shit is physically locked in
 #define PORT_GAIN_STAGE_1 PORT3 //P3
 #define PIN_INPUT_GAIN_STAGE_1 BIT3 //P3.3
 #define PIN_OUTPUT_GAIN_STAGE_1 BIT1 //P3.1
