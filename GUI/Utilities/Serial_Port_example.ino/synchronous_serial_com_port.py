@@ -5,7 +5,7 @@
 #Sends user input
 #Prints out device response
 
-import serial
+import pyserial
 
 device_name = '/dev/tty' #something_something
 
