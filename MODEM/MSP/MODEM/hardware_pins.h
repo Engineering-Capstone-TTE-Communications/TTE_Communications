@@ -14,14 +14,6 @@
 #ifndef HARDWARE_PINS_H_
 #define HARDWARE_PINS_H_
 
-/*
-   ____       _         ____  _                     _
-  / ___| __ _(_)_ __   / ___|| |_ __ _  __ _  ___  / |
- | |  _ / _` | | '_ \  \___ \| __/ _` |/ _` |/ _ \ | |
- | |_| | (_| | | | | |  ___) | || (_| | (_| |  __/ | |
-  \____|\__,_|_|_| |_| |____/ \__\__,_|\__, |\___| |_|
-                                       |___/
- * */
 //Abstracting pins is kinda pointless since we're using only 1 HW configuration like that shit is physically locked in
 #define PORT_GAIN_STAGE_1 PORT3 //P3
 #define PIN_INPUT_GAIN_STAGE_1 BIT3 //P3.3

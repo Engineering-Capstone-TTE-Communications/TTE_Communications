@@ -6,36 +6,43 @@
 #define OUTPUT_PIN GPIO_PIN0
 #define COMPARE_VALUE_500kHZ 48 //Didn't prescalar the clk so 24MHz/48 = 500kHz
 unsigned int ADC_Result;
-/*
-void blink_LED_inf_loop(void){
-    volatile uint32_t i;
 
-    GPIO_setAsOutputPin(
-            GPIO_PORT_P1,
-            GPIO_PIN0
-    );
+void setup_pwm_output(void){
+    WDTCTL = WDTPW | WDTHOLD;                 // Stop WDT
 
+    //Datasheet pg 101
+    P5DIR |= BIT0 | BIT1;                     // P1.6 and P1.7 output 01
+    P5SEL0 |= BIT0 | BIT1;                    // P1.6 and P1.7 options select
 
+    PM5CTL0 &= ~LOCKLPM5;
 
-    while(1)
-    {
-        ADC_Result +=0;
-       //Blink LED for sanity
-       // Toggle P1.0 output
-       GPIO_toggleOutputOnPin(
-           GPIO_PORT_P1,
-           GPIO_PIN0
-       );
-       // Delay
-       for(i=10000; i>0; i--);
-    }
+    TB2CCR0 = 1000-1;                         // PWM Period
+    TB2CCTL1 = OUTMOD_7;                      // CCR1 reset/set
+    TB2CCR1 = 750;                            // CCR1 PWM duty cycle
+    TB2CCTL2 = OUTMOD_7;                      // CCR2 reset/set
+    TB2CCR2 = 250;                            // CCR2 PWM duty cycle
+    TB2CTL = TBSSEL__SMCLK | MC__UP | TBCLR;  // SMCLK, up mode, clear TBR
 }
-*/
-int main(void) {
 
-    WDT_A_hold(WDT_A_BASE);
-    config_reciever();
+void setup_pwm_2(void){
+    WDTCTL = WDTPW | WDTHOLD;                 // Stop WDT
 
+    P1DIR |= BIT6 | BIT7;                     // P1.6 and P1.7 output
+    P1SEL1 |= BIT6 | BIT7;                    // P1.6 and P1.7 options select
+
+    // Disable the GPIO power-on default high-impedance mode to activate
+    // previously configured port settings
+    PM5CTL0 &= ~LOCKLPM5;
+
+    TB0CCR0 = 1000-1;                         // PWM Period
+    TB0CCTL1 = OUTMOD_7;                      // CCR1 reset/set
+    TB0CCR1 = 750;                            // CCR1 PWM duty cycle
+    TB0CCTL2 = OUTMOD_7;                      // CCR2 reset/set
+    TB0CCR2 = 250;                            // CCR2 PWM duty cycle
+    TB0CTL = TBSSEL__SMCLK | MC__UP | TBCLR;  // SMCLK, up mode, clear TBR
+
+}
+void config_adc(void){
     // Configure ADC12
         ADCCTL0 |= ADCSHT_2 | ADCON;                             // ADCON, S&H=16 ADC clks
         ADCCTL1 |= ADCSHP;                                       // ADCCLK = MODOSC; sampling timer
@@ -55,6 +62,15 @@ int main(void) {
                 P1OUT |= BIT0;                                   // Set P1.0 LED on
             __delay_cycles(5000);
         }
+}
+int main(void) {
+
+    WDT_A_hold(WDT_A_BASE);
+    setup_pwm_output();
+
+    while(1){
+
+    }
 }
 
 
