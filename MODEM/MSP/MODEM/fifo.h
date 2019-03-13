@@ -1,19 +1,17 @@
 /*
- * uart.h
+ * fifo.h
  *
- *  Created on: Mar 12, 2019
+ *  Created on: Mar 13, 2019
  *      Author: donald
  */
 
-#ifndef UART_H_
-#define UART_H_
+#ifndef FIFO_H_
+#define FIFO_H_
 
-#define UART_FIFO_SIZE_BYTES 5
-#define TRUE 1
-#define FALSE 0
+#include "common.h"
 
 typedef struct {
-    char data[UART_FIFO_SIZE_BYTES];
+    char data[FIFO_MAX_BYTES];
     char * head; //Read from head
     char * tail; //Write to tail
     //char head_looped; //if tail < head, it's fine to write lol
@@ -26,12 +24,5 @@ typedef struct {
 void FIFO_append_byte(FIFO * fifo, char * data_in);
 void FIFO_read_byte(FIFO * fifo, char * output_buffer);
 void init_FIFO(FIFO * fifo);
-void dump_FIFO(FIFO * fifo);
-void init_USB_registers(void);
-void init_USB(void);
 
-extern FIFO * uart_fifo;
-extern FIFO UART_FIFO;
-
-
-#endif /* UART_H_ */
+#endif /* FIFO_H_ */
