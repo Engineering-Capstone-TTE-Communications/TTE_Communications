@@ -123,7 +123,7 @@ void __attribute__ ((interrupt(USCI_A0_VECTOR))) USCI_A0_ISR (void)
     case USCI_NONE: break;
     case USCI_UART_UCRXIFG:
       while(!(UCA0IFG&UCTXIFG));
-      UCA0TXBUF = UCA0RXBUF;
+      UCA0TXBUF =  strcat(UCA0RXBUF,'\r\n');
       __no_operation();
       break;
     case USCI_UART_UCTXIFG: break;
