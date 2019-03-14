@@ -12,23 +12,16 @@
  * Family guide pg.409
  * tb1ccr2 = timer b clk / ideal fc
  */
-void set_filter_input(int T){
     //Diagrams say "TBxCLn" e.g. the diagrams showing timer modes
     //TBxCCRn = TBxCLn
     //Duty cycle < 1% to ensure good RMS input into filter
     //Too high rms input => filter output is heavily distorted
-}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
 
 void set_filter_clock_period(int T){
-    /*
-    //Clock Frequency
-    TB1CCR0 = 1000-1;
-    TB1CCR2 = 500; //50% duty cycle
-    TB1CCR1 = 200; //50% duty cycle
-    */
-    TB1CCR0 = T-1;                         // PWM Period
-    TB1CCTL2 = OUTMOD_7;                      // CCR2 reset/set
-    TB1CCR2 = T>>1;                            // CCR2 PWM duty cycle
+    TB1CCR0 = T-1;
+    TB1CCR2 = T>>1; //50% Duty cycle
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -54,4 +47,19 @@ void initialize_filter_clk(void){
     set_filter_clock_period(2);
     TB1CTL = TBSSEL__SMCLK | MC__UP | TBCLR;  // SMCLK, up mode, clear TBR
 
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+///P5.0/TB2.1/MFM.RX/A8
+void initialize_pwm_dac(void){
+    P5DIR |= BIT1;
+    P5SEL0 |= BIT1;
+
+    TB2CCTL2 = OUTMOD_7;
+
+    TB2CCR0 = 60;                         // PWM Period
+    TB2CCR2 = 12;                            // CCR2 PWM duty cycle
+
+    TB2CTL = TBSSEL__SMCLK | MC__UP | TBCLR;  // SMCLK, up mode, clear TBR
 }

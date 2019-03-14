@@ -18,10 +18,11 @@ void disable_interrupts(){
 int main(void){
   stop_watchdog_timer();
 
-  //PM5CTL0 &= ~LOCKLPM5; //Voodoo tbh
+  PM5CTL0 &= ~LOCKLPM5; //Voodoo tbh
 
   init_USB();
   initialize_filter_clk();
+  initialize_pwm_dac();
 
   enable_interrupts();
 
