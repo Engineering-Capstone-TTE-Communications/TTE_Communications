@@ -1,6 +1,7 @@
 #include "common.h"
 #include "fifo.h"
 #include "usb.h"
+#include "filter.h"
 
 void stop_watchdog_timer(){
     WDTCTL = WDTPW | WDTHOLD;
@@ -16,7 +17,12 @@ void disable_interrupts(){
 
 int main(void){
   stop_watchdog_timer();
+
+  //PM5CTL0 &= ~LOCKLPM5; //Voodoo tbh
+
   init_USB();
+  initialize_filter_clk();
+
   enable_interrupts();
 
   while(1){
@@ -27,7 +33,6 @@ int main(void){
       if(usb_rx_fifo_ptr->empty == FALSE){ //if there's data from comp
                 //process_incoming_data(usb_rx_fifo_ptr);
       }
-
   }
 }
 

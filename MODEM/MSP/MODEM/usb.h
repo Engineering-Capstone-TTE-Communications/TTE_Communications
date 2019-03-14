@@ -21,5 +21,4 @@ extern FIFO * usb_tx_fifo_ptr;
 extern FIFO USB_RX_FIFO;
 extern FIFO * usb_rx_fifo_ptr;
 
-
 #endif /* USB_H_ */
