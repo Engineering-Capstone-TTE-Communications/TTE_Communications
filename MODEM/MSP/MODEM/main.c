@@ -2,6 +2,7 @@
 #include "fifo.h"
 #include "usb.h"
 #include "filter.h"
+#include "adc.h"
 
 void stop_watchdog_timer(){
     WDTCTL = WDTPW | WDTHOLD;
@@ -14,6 +15,7 @@ void enable_interrupts(){
 void disable_interrupts(){
     __bic_SR_register(GIE);//Disable interrupts
 }
+char sample_ctr;
 
 int main(void){
   stop_watchdog_timer();
@@ -23,7 +25,7 @@ int main(void){
   init_USB();
   initialize_filter_clk();
   initialize_pwm_dac();
-
+  setup_adc();
   enable_interrupts();
 
   while(1){
@@ -34,6 +36,8 @@ int main(void){
       if(usb_rx_fifo_ptr->empty == FALSE){ //if there's data from comp
                 //process_incoming_data(usb_rx_fifo_ptr);
       }
+
+      sample_ctr += poll_adc();
   }
 }
 

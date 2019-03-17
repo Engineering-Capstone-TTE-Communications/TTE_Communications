@@ -10,8 +10,13 @@ import math
 
 
 class image_MODEM():
-    def __init__(self):
+    def __init__(self,upsample_scalar,downsample_scalar):
         self.webcam_feed = cv2.VideoCapture(0)
+        self.sigma = 10*((upsample_scalar)**-1)
+        self.sharpen_weighting = 100**-1
+        self.upsample_scalar = upsample_scalar
+        self.downsample_scalar = downsample_scalar
+        self.order_num = 1
 
     def display_frame(self,frame,title):
         cv2.destroyAllWindows()
@@ -29,26 +34,26 @@ class image_MODEM():
         x = x[1::L,1::L,:]
         return x
 
-    def upsample_3d(self,x,L,order_num):
+    def upsample_3d(self,x,L):
         if L < 1:
             return x
         l,w,num_colors = x.shape
-        y = scipy.ndimage.zoom(x[:,:,0], L, order=order_num)
+        y = scipy.ndimage.zoom(x[:,:,0], L, order=self.order_num)
         for color in np.arange(1,num_colors):
-            zoomed_color = scipy.ndimage.zoom(x[:,:,color], L, order=order_num)
+            zoomed_color = scipy.ndimage.zoom(x[:,:,color], L, order=self.order_num)
             y = np.dstack((y,zoomed_color))
             
         return y
 
 
-    def blur(self,frame,sigma):
+    def blur(self,frame):
         l,w,num_colors = frame.shape
         for color in np.arange(num_colors):
-            frame[:,:,color] = ndimage.gaussian_filter(frame[:,:,color], sigma)
+            frame[:,:,color] = ndimage.gaussian_filter(frame[:,:,color], self.sigma)
         return frame
 
 
-    def sharpen(self,frame,sigma,scalar): #highpass
+    def sharpen(self,frame,scalar): #highpass
         l,w,num_colors = frame.shape
         print(scalar)
         temp_frame = frame
@@ -58,11 +63,11 @@ class image_MODEM():
             frame[:,:,color] = frame[:,:,color]+scalar*(frame[:,:,color]- temp_frame[:,:,color])
         return frame
 
-    def rx_filter(self,frame,L,order_num,sigma,sharpen_weighting):
+    def rx_filter(self,frame,L):
         for i in np.arange(1,L,2):
-            frame = self.upsample_3d(frame,2,order_num)
-            frame = self.blur(frame,sigma)
-            frame = self.sharpen(frame,sigma,sharpen_weighting)
+            frame = self.upsample_3d(frame,2)
+            frame = self.blur(frame)
+            frame = self.sharpen(frame,self.sharpen_weighting)
             #frame = blur(frame,sigma)/2+sharpen(frame,sigma,sharpen_weighting)/2            
         return frame
         
@@ -83,40 +88,51 @@ class image_MODEM():
             pass
         return frame_out
 
-if __name__ == "__main__":
+def get_scalars(frame_rate):
 
-    min_height = 1920/10
-    min_width = 1080/10
-
-    frame_rate = 1
+    min_height = 1920/20
+    min_width = 1080/20
 
     goodput = 1000
     goodput_per_frame = goodput/frame_rate
 
     start_time_ns = time_lib.monotonic_ns()
-    order_num = 1
+    
 
-    videographer = image_MODEM()
+    temp_videographer = image_MODEM(1,1)
+    
+    frame = temp_videographer.get_webcam_frame() #8 bit datatype
+        
+    frame_bit_count = (frame.shape)[0]*(frame.shape)[1]*(frame.shape)[2]*8 
+    downsample_scalar = int(np.floor(frame_bit_count/goodput_per_frame))
+    if(downsample_scalar > 17):
+        downsample_scalar = 17
+    
+    frame = temp_videographer.downsample_3d(frame,downsample_scalar)
+    max_height = min_height*min_width*3*8
+
+    frame_bit_count = sum((frame.shape)[0:1])*(frame.shape)[2]
+
+    upsample_scalar = np.floor(np.log2(max_height/(frame_bit_count)))
+    return [upsample_scalar,downsample_scalar]
+
+if __name__ == "__main__":
+    
+    frame_rate = 1/2
+
+    [upsample_scalar,downsample_scalar] = get_scalars(frame_rate)
+    videographer = image_MODEM(upsample_scalar,downsample_scalar)
+    print([upsample_scalar,downsample_scalar])
+    start_time_ns = time_lib.monotonic_ns()
 
     while(1):
         
         frame = videographer.get_webcam_frame() #8 bit datatype
-        
-        frame_bit_count = sum((frame.shape)[0:1])*(frame.shape)[2]*8 
-        downsample_scalar = int(np.floor(frame_bit_count/goodput_per_frame))
+
         frame = videographer.downsample_3d(frame,downsample_scalar)
-        max_height = min_height*min_width*3*8
-
-        frame_bit_count = sum((frame.shape)[0:1])*(frame.shape)[2]
-
-        upsample_scalar = np.floor(np.log2(max_height/(frame_bit_count)))
-        #1 3 10, magic voodoo numbers
-        sigma = 10*((upsample_scalar)**-1)
-        
-        sharpen_weighting = 100**-1
-        frame = videographer.rx_filter(frame,upsample_scalar,order_num,sigma,sharpen_weighting)
-        
-        videographer.display_frame(frame,str(order_num))
+        prin(frame.sha)
+        videographer.display_frame(frame,'yeet')
+        frame = videographer.rx_filter(frame,upsample_scalar)
 
         videographer.blocking_fps_delay(frame_rate,start_time_ns)
         start_time_ns = time_lib.monotonic_ns()

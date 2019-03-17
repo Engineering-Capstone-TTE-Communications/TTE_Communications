@@ -67,6 +67,7 @@
 //   November 2016
 //   Built with IAR Embedded Workbench v6.50.0 & Code Composer Studio v6.2.0
 //******************************************************************************
+
 #include <msp430.h>
 
 unsigned int ADC_Result;
