@@ -101,16 +101,14 @@ int main(void)
     ADCCTL1 |= ADCSHS_2 | ADCCONSEQ_2;                        // repeat single channel; TB1.1 trig sample start
     ADCCTL2 &= ~ADCRES;                                       // clear ADCRES in ADCCTL
     ADCCTL2 |= ADCRES_2;                                      // 12-bit conversion results
-    ADCMCTL0 |= ADCINCH_1 | ADCSREF_1;                        // A1 ADC input select; Vref=1.5V
+    ADCMCTL0 |= ADCINCH_1;                                    // A1 ADC input select; Vref=1.5V
     ADCIE |= ADCIE0;                                          // Enable ADC conv complete interrupt
 
     // Configure reference
     PMMCTL0_H = PMMPW_H;                                      // Unlock the PMM registers
     PMMCTL2 |= INTREFEN | REFVSEL_0;                          // Enable internal 1.5V reference
     __delay_cycles(400);                                      // Delay for reference settling
-
     ADCCTL0 |= ADCENC;                                        // ADC Enable
-
 
     // ADC conversion trigger signal - TimerB1.1 (32ms ON-period)
     TB1CCR0 = 1024-1;                                         // PWM Period

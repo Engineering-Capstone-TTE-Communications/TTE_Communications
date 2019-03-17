@@ -21,8 +21,4 @@ typedef struct {
     char net_elements;
 } FIFO;
 
-void FIFO_append_byte(FIFO * fifo, char * data_in);
-void FIFO_read_byte(FIFO * fifo, char * output_buffer);
-void init_FIFO(FIFO * fifo);
-
 #endif /* FIFO_H_ */

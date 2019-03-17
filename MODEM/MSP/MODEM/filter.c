@@ -1,4 +1,5 @@
-#include <filter.h>
+#include "filter.h"
+#include "common.h"
 /* Filter Input is on
 *  P2.1/TB1.2/COMP1.O
 *  TB1 CCR2
@@ -19,12 +20,14 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
+
 void set_filter_clock_period(int T){
     TB1CCR0 = T-1;
     TB1CCR2 = T>>1; //50% Duty cycle
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 void initialize_filter_clk(void){
     //Initialize filter clk pins
@@ -49,13 +52,9 @@ void initialize_filter_clk(void){
 
 }
 
+
 ////////////////////////////////////////////////////////////////////////////////////////////////
-
-///P5.0/TB2.1/MFM.RX/A8
-void initialize_pwm_dac(void){
-    P5DIR |= BIT1;
-    P5SEL0 |= BIT1;
-
+void initialize_symbol_period_period_clk(void){
     TB2CCTL2 = OUTMOD_7;
 
     TB2CCR0 = 60;                         // PWM Period
@@ -63,3 +62,15 @@ void initialize_pwm_dac(void){
 
     TB2CTL = TBSSEL__SMCLK | MC__UP | TBCLR;  // SMCLK, up mode, clear TBR
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+///P5.0/TB2.1/MFM.RX/A8
+void initialize_pwm_dac(void){
+    initialize_symbol_period_period_clk();
+    P5DIR |= BIT1;
+    P5SEL0 |= BIT1;
+}
+
+
+

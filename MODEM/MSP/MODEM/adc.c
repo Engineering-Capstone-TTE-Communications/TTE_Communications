@@ -75,9 +75,10 @@
 //******************************************************************************
 #include <msp430.h>
 #include "common.h"
+#include "int_fifo.h"
 
-unsigned int adcResult;
-char new_sample;
+unsigned int adc_value;
+char sample_count;
 
 void setup_adc_pins(void)
 {
@@ -128,14 +129,16 @@ void setup_adc(){
     setup_adc_pins();
     setup_adc_core();
 }
+
 char poll_adc(void){
-    if(new_sample==TRUE){
-              new_sample = FALSE;
-              return 1;
-    }
-    return 0;
+    char temp = sample_count
+    sample_count = 0;
+    return temp;
 }
 
+uint_FIFO ADC_SAMPLES;
+uint_FIFO * adc_samples;
+char sample_flag;
 // ADC interrupt service routine
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector=ADC_VECTOR
@@ -161,8 +164,11 @@ void __attribute__ ((interrupt(ADC_VECTOR))) ADC_ISR (void)
       case ADCIV_ADCINIFG:
           break;
       case ADCIV_ADCIFG:
-          adcResult = ADCMEM0;            // Read ADC memory
-          new_sample = TRUE;
+          while(!(UCA0IFG&UCTXIFG));
+          adc_value = ADCMEM0;
+          uint_FIFO_append_byte(adc_samples,&adc_value);
+          sample_count++;
+          sample_flag = TRUE;
           break;
       default:
           break;
