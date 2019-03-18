@@ -74,7 +74,7 @@ void init_USB_registers(void){
 void init_USB(void){
     init_USB_registers();
 
-    usb_tx_fifo_ptr = &USB_RX_FIFO;
+    usb_tx_fifo_ptr = &USB_TX_FIFO;
     init_FIFO(usb_tx_fifo_ptr);
 
     usb_rx_fifo_ptr = &USB_RX_FIFO;

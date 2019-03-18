@@ -25,8 +25,22 @@ void increment_tb_ctr(){
     tb_ctr++;
 }
 
+void preamble_bot(){
+        if(usb_rx_fifo_ptr->empty == TRUE){
+            char temp_bot_buffer;
+            temp_bot_buffer = 'y';
+            FIFO_append_byte(usb_rx_fifo_ptr,&temp_bot_buffer);
+            temp_bot_buffer = 'e';
+            FIFO_append_byte(usb_rx_fifo_ptr,&temp_bot_buffer);
+            temp_bot_buffer = 'e';
+            FIFO_append_byte(usb_rx_fifo_ptr,&temp_bot_buffer);
+            temp_bot_buffer = 't';
+            FIFO_append_byte(usb_rx_fifo_ptr,&temp_bot_buffer);
+    }
+}
 
 unsigned int temp;
+
 int main(void){
   stop_watchdog_timer();
 
@@ -35,12 +49,19 @@ int main(void){
 
   initialize_filter_clk();
   initialize_pwm_dac();
+
   setup_adc();
+  setup_dsp();
+
 
   enable_interrupts();
-  communications_state = calibrate_decision_variable;
+
 
   while(1){
+      if(usb_tx_fifo_ptr->empty == FALSE){
+          dump_USB_FIFO(usb_tx_fifo_ptr);
+      }
+      //preamble_bot();
       dsp();
   }
 
