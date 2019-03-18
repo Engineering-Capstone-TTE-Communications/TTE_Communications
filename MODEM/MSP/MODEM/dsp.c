@@ -14,6 +14,7 @@
 #include "fifo.h"
 #include "usb.h"
 #include "filter.h"
+#include "dac.h"
 
 unsigned int temp;
 
@@ -141,6 +142,7 @@ void calibrate_windows(){
     //Heck an off by 1 error. out of 5 Sps gotta be right on qq
     window_sync_delay = (((Sps>>1) - recent_min_index + recent_peak_index)>>1)-1;
 }
+
 void decide_symbol(){
     num_data_bits++;
     decided_symbol |= ((accumulator > decision_variable)<<num_data_bits);
@@ -177,18 +179,20 @@ void process_preamble(){
     if(decision_variable_set == FALSE){
         check_peaks();
         if( rx_preamble_sample_count >= ((Sps)>>1) ){
-            validate_peaks();
-            if(rx_preamble_symbol_count != 0){ //Valid Peaks
-                set_communications_state(found_preamble);
-                rx_preamble_sample_count = 0;
-                rx_preamble_symbol_count++;
+            //validate_peaks();
+             //Valid Peaks
+            set_communications_state(found_preamble);
+            rx_preamble_sample_count = 0;
+            rx_preamble_symbol_count++;
+            data_out_ascii = 'a';
+            FIFO_append_byte(usb_tx_fifo_ptr,&data_out_ascii);
 
-                if(rx_preamble_symbol_count > ASCII_BITS>>1){
-                    accumulate_decision_variable();
-                }else{
-                    calibrate_windows();
-                }
+            if(rx_preamble_symbol_count > ASCII_BITS>>1){
+                accumulate_decision_variable();
+            }else{
+                calibrate_windows();
             }
+
         }
     }else if( rx_preamble_sample_count >= Sps && decision_variable_set == TRUE){
         rx_preamble_sample_count = 0;
@@ -213,7 +217,7 @@ void process_symbol(){
     if (num_data_bits >= 6){
         data |= ((accumulator > decision_variable)<<num_data_bits);
         data_out_ascii = 49 + data;
-        //FIFO_append_byte(usb_tx_fifo_ptr,&data_out_ascii);
+        FIFO_append_byte(usb_tx_fifo_ptr,&data_out_ascii);
         num_data_bits = 0;
         data = 0;
     }
@@ -223,7 +227,6 @@ void process_symbol(){
 
 
 void setup_dsp(){
-    initialize_pwm_dac();
     current_dac_bit_idx = 10;
 
     set_communications_state(finding_preamble);
@@ -283,9 +286,9 @@ void update_dac(){
     get_new_dac_bit();
     sample_ctr  = 0;
     if(current_dac_bit > 0){
-        P5DIR |= BIT1;                            // CCR2 PWM duty cycle
+        send_hi();                           // CCR2 PWM duty cycle
     }else{
-       P5DIR &=~ BIT1;
+       send_low();
     }
 }
 

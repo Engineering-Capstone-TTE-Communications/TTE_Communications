@@ -7,6 +7,7 @@
 #include "filter.h"
 #include "int_fifo.h"
 #include "dsp.h"
+#include "dac.h"
 
 void stop_watchdog_timer(){
     WDTCTL = WDTPW | WDTHOLD;
@@ -47,9 +48,10 @@ int main(void){
   PM5CTL0 &= ~LOCKLPM5; //Voodoo tbh
   init_USB();
 
+  //initialize_pwm_dac();
   initialize_filter_clk();
-  initialize_pwm_dac();
 
+  init_dac();
   setup_adc();
   setup_dsp();
 
@@ -61,7 +63,7 @@ int main(void){
       if(usb_tx_fifo_ptr->empty == FALSE){
           dump_USB_FIFO(usb_tx_fifo_ptr);
       }
-      //preamble_bot();
+      preamble_bot();
       dsp();
   }
 

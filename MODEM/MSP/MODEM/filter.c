@@ -49,27 +49,8 @@ void initialize_filter_clk(void){
     //default: 1 MHz
     set_filter_clock_period(2);
     TB1CTL = TBSSEL__SMCLK | MC__UP | TBCLR; // SMCLK, up mode, clear TBR
-
-
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-
-void initialize_symbol_period_period_clk(void){
-    //sample_period = fc_period;
-    TB2CCTL2 = OUTMOD_7 ;
-    TB2CCR0 = fc_period;                         // PWM Period
-    TB2CCR2 = TB2CCR0>>1;                            // CCR2 PWM duty cycle
-    TB2CTL = TBSSEL__SMCLK | MC__UP | TBCLR;  // SMCLK, up mode, clear TBR
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////
-///P5.0/TB2.1/MFM.RX/A8
-void initialize_pwm_dac(void){
-    initialize_symbol_period_period_clk();
-    P5DIR |= BIT1;
-    P5SEL0 |= BIT1;
-}
 // Timer B0 interrupt service routine
 
 
