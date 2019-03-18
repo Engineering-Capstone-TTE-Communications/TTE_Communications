@@ -14,5 +14,6 @@ void initialize_pwm_dac(void);
 void initialize_symbol_period_period_clk(void);
 
 extern char symbol_period_flag;
-
+extern char been_here;
+extern unsigned int sample_period;
 #endif

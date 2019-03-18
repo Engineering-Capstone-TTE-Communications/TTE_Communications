@@ -76,15 +76,17 @@
 #include <msp430.h>
 #include "common.h"
 #include "int_fifo.h"
+#include "dsp.h"
+#include "filter.h"
 
 unsigned int adc_value;
 char sample_count;
 
-void setup_adc_pins(void)
-{
+uint_FIFO ADC_SAMPLES;
+uint_FIFO * adc_samples;
 
-  P1DIR |= BIT0;                            // Select P1.0 as output
-  P1OUT &= ~BIT0;                           // Set P1.0 output low
+void setup_adc_pipeline(void)
+{
   PM5CTL0 &= ~LOCKLPM5;                     // Disable the GPIO power-on default high-impedance mode
                                             // to activate previously configured port settings
 
@@ -109,36 +111,44 @@ void setup_adc_pins(void)
 void setup_adc_core(void){
 
   ADCCTL0 &= ~ADCENC;                       // Disable ADC
-  ADCCTL0 = ADCSHT_1 | ADCMSC | ADCON ;               // ADCON, S&H=16 ADC clks
+  //ADCCTL0 = ADCSHT_1 | ADCMSC | ADCON ;               // ADCON, S&H=8 ADC clks
 
+  ADCCTL0 = ADCSHT_1 | ADCON;               // ADCON, S&H=8 ADC clks
 /* family guide, 561
+ *
  * ADCSHT_2 = 16 ADCCLK cycles
  * 0011b = 32 ADCCLK cycles
  * 0100b = 64 ADCCLK cycles
  * 0101b = 96 ADCCLK cycles
  * */
 
-  ADCCTL1 = ADCSHP;                         // ADCCLK = MODOSC; sampling timer
+  ADCCTL1 = ADCSHP | ADCCONSEQ_2;                         // ADCCLK = MODOSC; sampling timer
   ADCCTL2 = ADCRES_2;                       // 12-bit conversion results
   ADCIE = ADCIE0;                           // Enable ADC conv complete interrupt
+
   ADCMCTL0 = ADCINCH_1 | ADCSREF_0;         // A1 ADC input select = OA0 output
-                                            // Vref = DVCC
   ADCCTL0 |= ADCENC | ADCSC;
 }
+
+
 void setup_adc(){
-    setup_adc_pins();
+    setup_adc_pipeline();
     setup_adc_core();
+
+    adc_samples = &ADC_SAMPLES;
+    init_uint_FIFO(adc_samples);
 }
 
 char poll_adc(void){
-    char temp = sample_count
+    char temp = sample_count;
     sample_count = 0;
     return temp;
 }
+void adcisr_fun(){
 
-uint_FIFO ADC_SAMPLES;
-uint_FIFO * adc_samples;
+}
 char sample_flag;
+
 // ADC interrupt service routine
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector=ADC_VECTOR
@@ -165,10 +175,9 @@ void __attribute__ ((interrupt(ADC_VECTOR))) ADC_ISR (void)
           break;
       case ADCIV_ADCIFG:
           while(!(UCA0IFG&UCTXIFG));
+          sample_flag = TRUE;
           adc_value = ADCMEM0;
           uint_FIFO_append_byte(adc_samples,&adc_value);
-          sample_count++;
-          sample_flag = TRUE;
           break;
       default:
           break;

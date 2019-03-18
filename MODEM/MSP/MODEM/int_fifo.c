@@ -15,7 +15,7 @@ void init_uint_FIFO(uint_FIFO * fifo){
 }
 
 //overwrites oldest data
-void uint_FIFO_append_byte(uint_FIFO * fifo, char * data_in){
+void uint_FIFO_append_byte(uint_FIFO * fifo, unsigned int * data_in){
     //Check current FIFO state
     fifo->empty = FALSE;
 
@@ -33,10 +33,9 @@ void uint_FIFO_append_byte(uint_FIFO * fifo, char * data_in){
     }else{
         fifo->tail++;
     }
-
 }
 
-void uint_FIFO_read_byte(uint_FIFO * fifo, char * output_buffer){
+void uint_FIFO_read_byte(uint_FIFO * fifo,  unsigned int * output_buffer){
     //Check current FIFO state
     fifo->full = FALSE;
 

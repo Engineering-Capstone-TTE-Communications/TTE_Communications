@@ -98,7 +98,7 @@ void __attribute__ ((interrupt(USCI_A0_VECTOR))) USCI_A0_ISR (void)
     case USCI_UART_UCRXIFG:
       while(!(UCA0IFG&UCTXIFG));
       USB_ISR_Buffer = UCA0RXBUF;
-      FIFO_append_byte(usb_tx_fifo_ptr,&USB_ISR_Buffer);
+      FIFO_append_byte(usb_rx_fifo_ptr,&USB_ISR_Buffer);
       break;
     case USCI_UART_UCTXIFG: break;
     case USCI_UART_UCSTTIFG: break;

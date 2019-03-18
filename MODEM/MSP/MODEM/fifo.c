@@ -11,7 +11,7 @@
 void init_FIFO(FIFO * fifo){
     fifo->head = &fifo->data[0];
     fifo->tail = &fifo->data[0];
-    fifo->empty = TRUE;
+    fifo->empty = 1;
 }
 
 //overwrites oldest data

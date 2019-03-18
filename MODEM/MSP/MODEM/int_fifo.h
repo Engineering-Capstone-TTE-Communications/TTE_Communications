@@ -20,5 +20,8 @@ typedef struct {
     unsigned int net_elements;
 } uint_FIFO;
 
+void uint_FIFO_read_byte(uint_FIFO * fifo,  unsigned int * output_buffer);
+void init_uint_FIFO(uint_FIFO * fifo);
+void uint_FIFO_append_byte(uint_FIFO * fifo,  unsigned int * data_in);
 
 #endif /* INT_FIFO_H_ */
