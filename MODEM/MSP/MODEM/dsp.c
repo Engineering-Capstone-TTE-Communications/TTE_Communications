@@ -6,8 +6,6 @@
  */
 
 
-
-
 #include "common.h"
 #include "adc.h"
 #include "int_fifo.h"
@@ -15,8 +13,9 @@
 #include "usb.h"
 #include "filter.h"
 #include "dac.h"
+//#include "sine.h"
 
-unsigned int temp;
+unsigned int sample_buffer;
 
 unsigned long long accumulator;
 unsigned long long accumulator_peak = 0;
@@ -34,16 +33,15 @@ char rx_preamble_symbol_count, current_dac_data_byte,current_dac_bit_idx,current
 char preamble_index = 0;
 
 
-void process_samples(){
-        //ADC house keeping
-        ADCCTL0 |= ADCENC | ADCSC;
-        sample_ctr++;
+void reset_adc(){
         sample_flag = FALSE;
+        sample_ctr++;
 
-        //Accumulation
-        uint_FIFO_read_byte(adc_samples,&temp);
-        accumulator -= (temp*temp);
-        accumulator += (adc_value*adc_value);
+        while(adc_samples->empty == FALSE){
+            uint_FIFO_read_byte(adc_samples,&sample_buffer);
+            accumulator -= (sample_buffer*sample_buffer);
+            accumulator += (adc_value*adc_value);
+        }
 }
 
 char data,num_data_bits,recent_peak_index;
@@ -93,6 +91,7 @@ void set_communications_state(char state){
 //4 8 12 14
 void reset_peak_search(){
     set_communications_state(finding_preamble);
+
 }
 
 void validate_peaks(){
@@ -136,7 +135,17 @@ void accumulate_decision_variable(){
     decision_variable_set = TRUE;
 }
 
-
+void setup_dac_fs_clock(void)
+{
+}
+void setup_bit_period_clock(void)
+{
+    //TB0CCTL0 |= CCIE;                             // TBCCR0 interrupt enabled
+    TB0CCR0 = bit_period_length;
+    TB0CCTL1 = CCIE;
+    TB0CTL = TBSSEL__SMCLK | MC__UP | TBCLR | TBIE;      // ACLK, count mode, clear TBR, enable interrupt
+    TB0CCR1 = bit_period_length>>1;
+}
 
 void calibrate_windows(){
     //Heck an off by 1 error. out of 5 Sps gotta be right on qq
@@ -154,12 +163,12 @@ void decide_symbol(){
 
 void find_symbol_in_preamble(){
     // check 2+
-    unsigned long long temp;
-    temp = decided_symbol;
+    unsigned long long long_decision_symbol;
+    long_decision_symbol = decided_symbol;
     char i;
     for (i = 1; i < sizeof(preamble_bytes_long)*ASCII_BITS; i++){
-            if((!(temp << i) ^ (preamble_bytes_long))
-                    && (temp != 0)){
+            if((!(long_decision_symbol << i) ^ (preamble_bytes_long))
+                    && (long_decision_symbol != 0)){
                 preamble_index = i;
                 break;
         }
@@ -209,8 +218,6 @@ void process_preamble(){
 }
 
 
-
-
 //rx_preamble_symbol_index++;
 void process_symbol(){
     num_data_bits++;
@@ -224,17 +231,14 @@ void process_symbol(){
     rx_preamble_sample_count++;
 }
 
-
-
 void setup_dsp(){
-    current_dac_bit_idx = 10;
-
+    current_dac_bit_idx = 0;
     set_communications_state(finding_preamble);
     preamble_periods = sizeof(preamble_bytes);//*ASCII_BITS;
-
-    //stop_dac();
-    //P5DIR &=~ BIT1;
+    setup_bit_period_clock();
+    setup_dac_fs_clock();
 }
+
 char no_more_dac_data(){
     return (usb_rx_fifo_ptr->empty == TRUE);
 }
@@ -282,7 +286,7 @@ void get_new_dac_bit(){
     }
 }
 
-void update_dac(){
+void update_dac_data(){
     get_new_dac_bit();
     sample_ctr  = 0;
     if(current_dac_bit > 0){
@@ -291,15 +295,55 @@ void update_dac(){
        send_low();
     }
 }
+unsigned long long bit_period_ctr;
+char bit_period_flag;
 
 void dsp(){
+    if(bit_period_flag == TRUE){
+            bit_period_flag = false;
+            update_dac_data();
+    }
+
     if (sample_flag == TRUE){
-        process_samples();
-        if(communications_state == found_preamble){
-            process_preamble();
-        }else if(sample_ctr >= Sps){
-            update_dac();
-        }
+            reset_adc();
+    }
+
+    if(communications_state == found_preamble){
+        process_preamble();
     }
 }
 
+
+// Timer0_B3 Interrupt Vector (TBIV) handler
+#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
+#pragma vector=TIMER0_B1_VECTOR
+__interrupt void TIMER0_B1_ISR(void)
+#elif defined(__GNUC__)
+void __attribute__ ((interrupt(TIMER0_B1_VECTOR))) TIMER0_B1_ISR (void)
+#else
+#error Compiler not supported!
+#endif
+{
+    switch(__even_in_range(TB0IV,TB0IV_TBIFG))
+    {
+        case TB0IV_NONE:
+            break;                               // No interrupt
+        case TB0IV_TBCCR1:
+            poll_dac();
+            break;                               // CCR1 not used
+        case TB0IV_TBCCR2:
+            break;// CCR2 not used
+        case TB0IV_TBIFG:
+            poll_dac();
+            ADCCTL0 |= ADCENC | ADCSC;
+
+            bit_period_ctr++;
+            if (bit_period_ctr > (number_sine_LUT_elements<<2)){
+                bit_period_flag = TRUE;
+                bit_period_ctr = 0;
+            }
+            break;
+        default:
+            break;
+    }
+}

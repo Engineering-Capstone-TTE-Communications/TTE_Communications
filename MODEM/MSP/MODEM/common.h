@@ -19,13 +19,16 @@
 #define num_preamble_periods 1
 
 //Shouldn't be #defines ar they are dynamic :C
-#define Sps 5 //17+ SHS_N , which is 8 rn
-#define Sps_log2 4
+#define Sps 200 //17+ SHS_N , which is 8 rn
 #define SAMPLE_DEPTH Sps
+#define adc_downsample_factor 100
 
 #define min_accumulator_diff 100
 //
 #define decision_variable_bit_shift_scalar 2 //decision_variable_bit_shift_scalar round(log2(5*periods*2));
+#define bit_period_length 10
+#define dac_fs_period 25
+#define DAC_Sps 25
 
 //Communications Modes
 #define finding_preamble 1

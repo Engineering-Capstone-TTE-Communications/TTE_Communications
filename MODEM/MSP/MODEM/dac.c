@@ -6,18 +6,18 @@
  */
 
 #include "common.h"
+#include "dac.h"
 #include "sine.h"
 
 
 char send_high;
+
 void send_hi(){
     send_high = TRUE;
-
 };
 
 void send_low(){
     send_high = FALSE;
-
 }
 
 
@@ -30,7 +30,7 @@ void init_dac(void){
     PMMCTL2 = INTREFEN | REFVSEL_2;           // Enable internal 2.5V reference
     while(!(PMMCTL2 & REFGENRDY));            // Poll till internal reference settles
 
-    SAC3DAC = DACSREF_1 + DACLSEL_3 + DACIE;  // Select int Vref as DAC reference
+    SAC3DAC = DACSREF_1;// + DACLSEL_3;// + DACIE;  // Select int Vref as DAC reference
     SAC3DAT = 150;                       // Initial DAC data
     SAC3DAC |= DACEN;                         // Enable DAC
 
@@ -40,8 +40,8 @@ void init_dac(void){
     SAC3OA |= SACEN + OAEN;                    // Enable SAC and OA
 
     TB2CCTL2 = OUTMOD_7 ;
-    TB2CCR0 = 25;                         // PWM Period
-    TB2CCR2 = TB2CCR0>>1;                            // CCR2 PWM duty cycle
+    TB2CCR0 = 2;                         // PWM Period
+    TB2CCR2 = 1;                            // CCR2 PWM duty cycle
     TB2CTL = TBSSEL__SMCLK | MC__UP | TBCLR;  // SMCLK, up mode, clear TBR
 }
 
@@ -72,39 +72,42 @@ void initialize_pwm_dac(void){
     initialize_pwm_dac_buffer();
 }
 
-unsigned int dac_data_index;
+int dac_data_index;
 char dac_data_read_direction;
 unsigned int dac_data;
 
+#define upsample_scalar 4
 void next_sine_index_logic(){
     switch(dac_data_read_direction){
         case LUT_count_first_to_last:
-            dac_data_index++;
             dac_data = sine_LUT[dac_data_index]+negative_LUT_element_offset;
+            dac_data_index += upsample_scalar + 1;
             if(dac_data_index >= num_sine_LUT_elements-1){
+                dac_data_index = num_sine_LUT_elements-1;
                 dac_data_read_direction = LUT_count_last_to_first;
             }
             break;
         case LUT_count_last_to_first:
-            dac_data_index--;
             dac_data =  sine_LUT[dac_data_index]+negative_LUT_element_offset;
-            if(dac_data_index <= 0){
+            dac_data_index-= upsample_scalar + 1;
+            if(dac_data_index <= 1){
+                dac_data_index = 1;
                 dac_data_read_direction = LUT_count_first_to_last_inv;
-                dac_data_index++;
             }
             break;
         case LUT_count_first_to_last_inv:
-            dac_data_index++;
-            dac_data = negative_LUT_element_offset-sine_LUT[dac_data_index];
+            dac_data = negative_LUT_element_offset- sine_LUT[dac_data_index];
+            dac_data_index+= upsample_scalar + 1;
             if(dac_data_index >= num_sine_LUT_elements-1){
+                dac_data_index = num_sine_LUT_elements-1;
                 dac_data_read_direction = LUT_count_last_to_first_inv;
             }
             break;
         case LUT_count_last_to_first_inv:
-            dac_data_index--;
-            if(dac_data_index >= 1){
-                dac_data = negative_LUT_element_offset-sine_LUT[dac_data_index];
-            }else{
+            dac_data = negative_LUT_element_offset- sine_LUT[dac_data_index];
+            dac_data_index-= upsample_scalar + 1;
+            if(dac_data_index <= 1){
+                dac_data_index =  1;
                 dac_data_read_direction = LUT_count_first_to_last;
             }
             break;
@@ -114,22 +117,11 @@ void next_sine_index_logic(){
     }
 }
 
-
-#pragma vector = SAC1_SAC3_VECTOR
-__interrupt void SAC3_ISR(void)
-{
-    next_sine_index_logic();
-    SAC3DAT = dac_data;
-
-
-/*        if(send_high == TRUE){
-            next_sine_index_logic();
-            SAC3DAT = dac_data;
-        }else{
-            dac_data_index=0;
-            dac_data_read_direction = LUT_count_first_to_last;
-            SAC3DAT = 0;
-        }
-        */
-
+void poll_dac(){
+    if(send_high == TRUE){
+        next_sine_index_logic();
+        SAC3DAT = dac_data;
+    }else{
+        SAC3DAT = 1;
+    }
 }

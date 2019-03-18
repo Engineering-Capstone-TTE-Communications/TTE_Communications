@@ -113,7 +113,7 @@ void setup_adc_core(void){
   ADCCTL0 &= ~ADCENC;                       // Disable ADC
   //ADCCTL0 = ADCSHT_1 | ADCMSC | ADCON ;               // ADCON, S&H=8 ADC clks
 
-  ADCCTL0 = ADCSHT_1 | ADCON;               // ADCON, S&H=8 ADC clks
+  ADCCTL0 = ADCSHT_12 | ADCON;               // ADCON, S&H=8 ADC clks
 /* family guide, 561
  *
  * ADCSHT_2 = 16 ADCCLK cycles
@@ -147,6 +147,8 @@ char poll_adc(void){
 void adcisr_fun(){
 
 }
+unsigned int sample_buffer;
+
 char sample_flag;
 
 // ADC interrupt service routine
@@ -175,9 +177,10 @@ void __attribute__ ((interrupt(ADC_VECTOR))) ADC_ISR (void)
           break;
       case ADCIV_ADCIFG:
           while(!(UCA0IFG&UCTXIFG));
-          sample_flag = TRUE;
-          adc_value = ADCMEM0;
-          uint_FIFO_append_byte(adc_samples,&adc_value);
+                sample_flag = TRUE;
+                sample_ctr++;
+                adc_value = ADCMEM0;
+                uint_FIFO_append_byte(adc_samples,&adc_value);
           break;
       default:
           break;

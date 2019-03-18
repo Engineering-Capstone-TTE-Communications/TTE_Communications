@@ -16,4 +16,8 @@ extern char current_dac_data_byte,current_dac_bit_idx,current_dac_bit;
 extern char out_of_data;
 extern char preamble_periods;
 void get_new_dac_bit();
+
+
+extern char sample_ctr;
+
 #endif /* DSP_H_ */

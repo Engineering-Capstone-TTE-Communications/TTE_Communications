@@ -20,7 +20,7 @@ void enable_interrupts(){
 void disable_interrupts(){
     __bic_SR_register(GIE);//Disable interrupts
 }
-char sample_ctr,tb_ctr;
+char tb_ctr;
 
 void increment_tb_ctr(){
     tb_ctr++;
@@ -55,16 +55,19 @@ int main(void){
   setup_adc();
   setup_dsp();
 
-
+  send_hi();
   enable_interrupts();
 
 
   while(1){
+
       if(usb_tx_fifo_ptr->empty == FALSE){
           dump_USB_FIFO(usb_tx_fifo_ptr);
       }
+
       preamble_bot();
       dsp();
+      //poll_dac();
   }
 
 }

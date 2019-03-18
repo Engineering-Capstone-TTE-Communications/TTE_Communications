@@ -17,7 +17,8 @@
 //sine_fc_8000_Fs_2500
 //Downsampled by a factor of 0
 #define negative_LUT_element_offset 2048
-#define num_sine_LUT_elements 625
+
+
 unsigned int sine_LUT[] = {
 0,5,10,15,21,26,31,36,41,46,
     52,57,62,67,72,77,82,88,93,98,
