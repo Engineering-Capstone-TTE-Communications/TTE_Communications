@@ -67,8 +67,12 @@
 #define PI      3.1415926536
 
 #define CLOCK_FREQ  1000000
-#define dac_PRESCALAR 100
+#define dac_PRESCALAR 128
 #define dac_SPS 128
+
+#define adc_PRESCALAR 512
+#define adc_SPS 32
+
 
 
 typedef struct sine_ROM {
@@ -78,6 +82,7 @@ typedef struct sine_ROM {
 
 
 sine_ROM DAC_signal;
+sine_ROM ADC_signal;
 
 sine_ROM generate_sine_ROM(){
     sine_ROM ROM;
@@ -86,12 +91,9 @@ sine_ROM generate_sine_ROM(){
     for (i = 0; i <dac_SPS; i++){
         ROM.LUT[i] = _QsinPU(_Qdiv(i,dac_SPS)) + _Q(1);
     }
-
     return ROM;
 }
 
-
-/*
 void setup_adc(){
     // Configure GPIO
     P1DIR |= BIT2;                                            // Set P1.2 to output direction
@@ -130,12 +132,12 @@ void setup_adc(){
     ADCCTL0 |= ADCENC;                                        // ADC Enable
 
     // ADC conversion trigger signal - TimerB1.1 (32ms ON-period)
-    TB1CCR0 = 1024-1;                                         // PWM Period
-    TB1CCR1 = 512-1;                                          // TB1.1 ADC trigger
-    TB1CCTL1 = OUTMOD_4;                                      // TB1CCR0 toggle
+    TB1CCR0 = 1000-1;                                         // PWM Period
+    TB1CCR1 = 500-1;                                          // TB1.1 ADC trigger
+    TB1CCTL1 = OUTMOD_6;                                      // TB1CCR0 toggle
     TB1CTL = TBSSEL__ACLK | MC_1 | TBCLR;                     // ACLK, up mode)
 }
-*/
+
 int main(void)
 {
   WDTCTL = WDTPW + WDTHOLD;                 // Stop watch dog timer
@@ -165,10 +167,11 @@ int main(void)
   TB2CCR1 = 1;                              // TBCCR1 PWM duty cycle
   TB2CTL = TBSSEL__SMCLK | MC_1 | TBCLR;     // SMCLK, up mode, clear TBR
   DAC_signal = generate_sine_ROM();
+  setup_adc();
 
   __bis_SR_register(LPM3_bits + GIE);        // Enter LPM3, Enable Interrupt
 }
-
+unsigned int butts;
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = SAC0_SAC2_VECTOR
 __interrupt void SAC0_ISR(void)
@@ -191,5 +194,49 @@ void __attribute__ ((interrupt(SAC0_SAC2_VECTOR))) SAC0_ISR (void)
         break;
     default: break;
   }
+}
+
+
+
+// ADC interrupt service routine
+#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
+#pragma vector=ADC_VECTOR
+__interrupt void ADC_ISR(void)
+#elif defined(__GNUC__)
+void __attribute__ ((interrupt(ADC_VECTOR))) ADC_ISR (void)
+#else
+#error Compiler not supported!
+#endif
+{
+    switch(__even_in_range(ADCIV,ADCIV_ADCIFG))
+    {
+        case ADCIV_NONE:
+            break;
+        case ADCIV_ADCOVIFG:
+            break;
+        case ADCIV_ADCTOVIFG:
+            break;
+        case ADCIV_ADCHIIFG:
+            break;
+        case ADCIV_ADCLOIFG:
+            break;
+        case ADCIV_ADCINIFG:
+            break;
+        case ADCIV_ADCIFG:
+            butts = ADCMEM0;
+
+            ADC_signal.LUT[ADC_signal.phase]=_Q(butts);
+            ADC_signal.phase++;
+
+            if(ADC_signal.phase >= adc_SPS){
+                ADC_signal.phase=0;
+            }
+            ADCIFG = 0;
+
+
+            break;                                           // Clear CPUOFF bit from 0(SR)
+        default:
+            break;
+    }
 }
 
