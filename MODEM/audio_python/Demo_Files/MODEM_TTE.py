@@ -236,11 +236,12 @@ class audible_MODEM:
                 #    sd.wait()
 
                 rx_phy = sd.playrec(tx_phy, fs, channels=1)
+                sd.wait()
+
                 #if(self.sym_io_ctr == 1):
                 #print(np.sum(rx_phy[:] - tx_phy[:])/fs)
                 
-                sd.wait()
-
+                
                 #rx_phy = rx_phy[:,1]
                 
                 [decision_data, best_decision_integral] = self.demodulate_data(rx_phy)

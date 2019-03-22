@@ -4,7 +4,7 @@ import binascii
 import time
 import math 
 
-#sd.default.device = 'GUADT51'   
+sd.default.device = 'GUADT51'   
 
 class audible_MODEM:
 
@@ -225,6 +225,7 @@ class audible_MODEM:
 
         syms_per_iter = (np.ceil(8/self.N_bits)*self.N_consecutive_syms)
         for sym_count in np.arange(0,num_syms,syms_per_iter):
+            print(sd.query_devices())
             tx = self.get_tx_symbols(self.N_consecutive_syms)#number of symbols can be tweaked
             rx_dat = []
             for tx_sym in tx:
@@ -234,7 +235,9 @@ class audible_MODEM:
                 #if(self.sym_io_ctr > 1):
                 #    sd.wait()
 
-                rx_phy = sd.playrec(tx_phy, fs, channels=1)
+                rx_phy = sd.playrec(tx_phy, fs, channels=2)
+                rx_phy = rx_phy[:,0]
+
                 #if(self.sym_io_ctr == 1):
                 sd.wait()
                 

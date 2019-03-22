@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?ccsproject version="1.0"?>
+<projectOptions>
+	<ccsVersion value="8.3.0"/>
+	<deviceVariant value="MSP430G2553"/>
+	<deviceFamily value="MSP430"/>
+	<deviceEndianness value="little"/>
+	<codegenToolVersion value="18.1.4.LTS"/>
+	<isElfFormat value="true"/>
+	<linkerCommandFile value="lnk_msp430g2553.cmd"/>
+	<rts value="libc.a"/>
+	<createSlaveProjects value=""/>
+	<templateProperties value="id=QmathLib_signal_FFT_ex4_MPYsoftware.projectspec.QmathLib_signal_FFT_ex4_MPYsoftware"/>
+	<origin value="/Users/donald/ti/msp430ware_3_80_06_03/iqmathlib/examples/CCS/MPYsoftware/QmathLib_signal_FFT_ex4_MPYsoftware.projectspec"/>
+	<filesToOpen value=""/>
+	<isTargetManual value="true"/>
+</projectOptions>

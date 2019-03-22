@@ -42,7 +42,7 @@ def find_barker(length):
 #all with dissimiliar auto-correlations
 def legalize(x):
   return x
-     
+    
 def find_all_barker(max_length,*argv):
   legalize = False
   min_length = max_length
@@ -66,13 +66,13 @@ def find_all_barker(max_length,*argv):
 if __name__ == "__main__":
   target_length = 0
   while(target_length<2):
-   target_length = input('Please enter the target barker code length\r\n')
+    target_length = input('Please enter the target barker code length\r\n')
 
-   try:
+  try:
     target_length = int(target_length)
     if(target_length<2):
       print('\r\n')
-   except:
+  except:
     _ = 3 #dummy operation because syntax rules
   
   for arg in sys.argv[1:]:

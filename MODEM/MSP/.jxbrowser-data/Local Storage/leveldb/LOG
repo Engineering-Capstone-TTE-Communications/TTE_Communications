@@ -1,6 +1,0 @@
-2019/03/11-23:18:05.946 28931 Reusing MANIFEST leveldb/MANIFEST-000001
-2019/03/11-23:18:05.947 28931 Recovering log #3
-2019/03/11-23:18:05.949 28931 Reusing old log leveldb/000003.log 
-2019/03/11-23:20:31.822 27659 Level-0 table #5: started
-2019/03/11-23:20:31.829 27659 Level-0 table #5: 15950 bytes OK
-2019/03/11-23:20:31.835 27659 Delete type=0 #3
