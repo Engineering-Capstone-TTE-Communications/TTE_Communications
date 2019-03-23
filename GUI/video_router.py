@@ -55,7 +55,6 @@ class image_MODEM():
 
     def sharpen(self,frame,scalar): #highpass
         l,w,num_colors = frame.shape
-        print(scalar)
         temp_frame = frame
         self.increase_contrast(temp_frame,1,1)
         for color in np.arange(num_colors):
@@ -130,9 +129,9 @@ if __name__ == "__main__":
         frame = videographer.get_webcam_frame() #8 bit datatype
 
         frame = videographer.downsample_3d(frame,downsample_scalar)
-        prin(frame.sha)
-        videographer.display_frame(frame,'yeet')
         frame = videographer.rx_filter(frame,upsample_scalar)
+
+        videographer.display_frame(frame,'yeet')
 
         videographer.blocking_fps_delay(frame_rate,start_time_ns)
         start_time_ns = time_lib.monotonic_ns()

@@ -1,0 +1,1922 @@
+[
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MnVv-d3UdqDo&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MnVv-d3UdqDo",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Toggle P1.0 using software",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MnVv-d3UdqDo?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_1.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_1.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MnVv-d3UdqDo/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MoItO3l7KOOI&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MoItO3l7KOOI",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "ADC, Sample A1, AVcc Ref, Set P1.0 if A1 > 0.5*AVcc",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MoItO3l7KOOI?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_ADC12_01.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_ADC12_01.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MoItO3l7KOOI/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MwbDYMOrPU24&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MwbDYMOrPU24",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "ADC, Sample A1, 1.5V Shared Ref, Set P1.0 if A1 > 0.5V",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MwbDYMOrPU24?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_ADC12_02.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_ADC12_02.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MwbDYMOrPU24/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0Mwucy67FynL8&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0Mwucy67FynL8",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "ADC, Sample A2/A1/A0, internal 2V Ref",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0Mwucy67FynL8?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_ADC12_10.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_ADC12_10.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0Mwucy67FynL8/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MwlEJLGwOXmE&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MwlEJLGwOXmE",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "ADC, Sample A1, 1.5V Ref, TB0.1 Trig, Set P1.0 if A1>0.5V",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MwlEJLGwOXmE?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_ADC12_11.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_ADC12_11.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MwlEJLGwOXmE/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MF3UfkKf_TSk&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MF3UfkKf_TSk",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "ADC, Window Comparator, 2.5V ref, Timer trigger, DCO",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MF3UfkKf_TSk?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_ADC12_21.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_ADC12_21.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MF3UfkKf_TSk/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MhQ5FTpoD-5g&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MhQ5FTpoD-5g",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "CRC16, Compare CRC output with software-based algorithm",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MhQ5FTpoD-5g?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_CRC.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_CRC.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MhQ5FTpoD-5g/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MbeXA-fN0m70&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MbeXA-fN0m70",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Configure MCLK for 8MHz sourced from DCO",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MbeXA-fN0m70?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_CS_01.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_CS_01.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MbeXA-fN0m70/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MPMzflBjgmSg&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MPMzflBjgmSg",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Configure MCLK for 8MHz and XT1 sourcing ACLK and FLLREF",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MPMzflBjgmSg?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_CS_02.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_CS_02.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MPMzflBjgmSg/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MQ3sU-57OoHQ&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MQ3sU-57OoHQ",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Configure MCLK for 16MHz operation, and REFO sourcing FLLREF and ACLK",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MQ3sU-57OoHQ?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_CS_03.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_CS_03.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MQ3sU-57OoHQ/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MLDScA80-k9g&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MLDScA80-k9g",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Configure MCLK for 16MHz operation, and XT1 sourcing FLLREF and ACLK",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MLDScA80-k9g?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_CS_05.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_CS_05.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MLDScA80-k9g/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MsEoQQe3O3qY&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MsEoQQe3O3qY",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Configure MCLK for 4MHz and XT1HF sourcing MCLK",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MsEoQQe3O3qY?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_CS_06.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_CS_06.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MsEoQQe3O3qY/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MmeeKiAsKk10&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MmeeKiAsKk10",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Configure MCLK for 1MHz operation, and REFO sourcing FLLREF and ACLK. Use DCO software trim to lock FLL.",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MmeeKiAsKk10?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_CS_07.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_CS_07.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MmeeKiAsKk10/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MEfDnKe8CoRM&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MEfDnKe8CoRM",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Configure MCLK for 1MHz operation, low power REFO(LPREFO) sourcing FLLREF and ACLK. Use DCO software trim to lock FLL.",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MEfDnKe8CoRM?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_CS_08.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_CS_08.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MEfDnKe8CoRM/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MoE5oVgISfFU&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MoE5oVgISfFU",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Configure MCLK for 24MHz operation, and XT1 sourcing FLLREF and ACLK",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MoE5oVgISfFU?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_CS_10.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_CS_10.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MoE5oVgISfFU/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MHw268JLWzc4&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MHw268JLWzc4",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "eCOMP Toggle from LPM3; eCOMP in ultra low power mode, Vcompare is compared against internal VREF.",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MHw268JLWzc4?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_eCOMP_01.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_eCOMP_01.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MHw268JLWzc4/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MyOtgFqSw-Ag&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MyOtgFqSw-Ag",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "eUSCI_A0, SPI 3-Wire Master Incremented Data",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MyOtgFqSw-Ag?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_euscia0_spi_09.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_euscia0_spi_09.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MyOtgFqSw-Ag/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0M-jP6eiN2itc&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0M-jP6eiN2itc",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "eUSCI_A0, SPI 3-Wire Slave Data Echo",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0M-jP6eiN2itc?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_euscia0_spi_10.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_euscia0_spi_10.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0M-jP6eiN2itc/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MGP-D1lnpNDs&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MGP-D1lnpNDs",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "eUSCI_A0, SPI 4-Wire Master Incremented Data",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MGP-D1lnpNDs?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_euscia0_spi_11.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_euscia0_spi_11.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MGP-D1lnpNDs/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0M3v8KnXmrtTw&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0M3v8KnXmrtTw",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "eUSCI_A0, SPI 4-Wire Slave Data Echo",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0M3v8KnXmrtTw?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_euscia0_spi_12.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_euscia0_spi_12.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0M3v8KnXmrtTw/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MruotmeeV3Bc&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MruotmeeV3Bc",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "eUSCI_A0 UART echo at 9600 baud using BRCLK = 8MHz",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MruotmeeV3Bc?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_euscia0_uart_01.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_euscia0_uart_01.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MruotmeeV3Bc/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MjcpAxCJtw6g&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MjcpAxCJtw6g",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "eUSCI_A0 External Loopback test @ 115200 baud",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MjcpAxCJtw6g?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_euscia0_uart_03.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_euscia0_uart_03.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MjcpAxCJtw6g/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0Mu0tw_7jgiPg&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0Mu0tw_7jgiPg",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "eUSCI_A0 UART echo at 4800 baud using BRCLK = 32768Hz",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0Mu0tw_7jgiPg?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_euscia0_uart_05.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_euscia0_uart_05.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0Mu0tw_7jgiPg/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MWYS7QHSHG-s&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MWYS7QHSHG-s",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Long word writes to FRAM",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MWYS7QHSHG-s?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_framwrite.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_framwrite.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MWYS7QHSHG-s/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0Me6v3GZH0wws&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0Me6v3GZH0wws",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Enters LPM3 with ACLK = XT1CLK = 32768Hz",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0Me6v3GZH0wws?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_LPM3_01.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_LPM3_01.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0Me6v3GZH0wws/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0Mm-ZzCylTnxc&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0Mm-ZzCylTnxc",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Enters LPM3 with ACLK = VLO",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0Mm-ZzCylTnxc?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_LPM3_03.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_LPM3_03.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0Mm-ZzCylTnxc/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0Mx-wLoX9ZmTk&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0Mx-wLoX9ZmTk",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Software Poll P1.3, Set P1.0 if P1.3 = 1",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0Mx-wLoX9ZmTk?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_P1_01.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_P1_01.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0Mx-wLoX9ZmTk/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0McgxVr9rWeWA&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0McgxVr9rWeWA",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Software Port Interrupt Service on P1.3 from LPM3",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0McgxVr9rWeWA?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_P1_03.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_P1_03.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0McgxVr9rWeWA/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MZOBszXjLpp0&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MZOBszXjLpp0",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "SAC-L3, General-Purpose Mode",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MZOBszXjLpp0?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_SAC_L3_01.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_SAC_L3_01.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MZOBszXjLpp0/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0M9CRpnTzqNR0&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0M9CRpnTzqNR0",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "SAC-L3, Inverting PGA Mode",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0M9CRpnTzqNR0?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_SAC_L3_03.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_SAC_L3_03.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0M9CRpnTzqNR0/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0Mdiz2W0SgT_g&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0Mdiz2W0SgT_g",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "SAC-L3, DAC Buffer Mode",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0Mdiz2W0SgT_g?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_SAC_L3_05.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_SAC_L3_05.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0Mdiz2W0SgT_g/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MT4BYvyDeksI&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MT4BYvyDeksI",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Timer0_B3, Toggle P1.0, CCR0 Count Mode ISR, DCO SMCLK",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MT4BYvyDeksI?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_tb0_01.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_tb0_01.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MT4BYvyDeksI/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MgdZwDB8EXaw&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MgdZwDB8EXaw",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Timer0_B3, Toggle P1.0, CCR0 Up Mode ISR, DCO SMCLK",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MgdZwDB8EXaw?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_tb0_02.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_tb0_02.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MgdZwDB8EXaw/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MPuj43YKOh6E&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MPuj43YKOh6E",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Timer0_B3, Toggle P1.0, Overflow ISR, 32kHz ACLK",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MPuj43YKOh6E?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_tb0_04.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_tb0_04.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MPuj43YKOh6E/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MV5CLz4ZoQyM&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MV5CLz4ZoQyM",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Timer0_B3, PWM TB0.1-2, Up Mode, DCO SMCLK",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MV5CLz4ZoQyM?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_tb0_16.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_tb0_16.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MV5CLz4ZoQyM/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MELYvkJAJ2Fg&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MELYvkJAJ2Fg",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Timer0_B3, PWM TB0.1-2, Up Mode, 32KHz ACLK",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MELYvkJAJ2Fg?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_tb0_17.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_tb0_17.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MELYvkJAJ2Fg/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MXQvViwOeryU&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MXQvViwOeryU",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Timer0_B3, PWM TB0.1-2, Up/Down Mode, 32kHz ACLK",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MXQvViwOeryU?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_tb0_20.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_tb0_20.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MXQvViwOeryU/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0Me5ZX0GZ_WYE&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0Me5ZX0GZ_WYE",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Timer0_B3, Ultra-Low Power Pulse Accumulator",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0Me5ZX0GZ_WYE?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_tb0_22.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_tb0_22.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0Me5ZX0GZ_WYE/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MqxTTw8QzZr4&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MqxTTw8QzZr4",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Timer0_B3 Capture of ACLK",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MqxTTw8QzZr4?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_tb0_capture.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_tb0_capture.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MqxTTw8QzZr4/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0Mtj3m4MpXgn0&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0Mtj3m4MpXgn0",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Timer1_B3, Toggle P1.0, CCR0 Cont Mode ISR, 32KHz ACLK",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0Mtj3m4MpXgn0?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_tb1_05.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_tb1_05.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0Mtj3m4MpXgn0/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MTa06sa7Va08&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MTa06sa7Va08",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Timer0_B3, Toggle P1.0, CCR0 Up Mode ISR, DCO SMCLK",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MTa06sa7Va08?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_tb1_06.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_tb1_06.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MTa06sa7Va08/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MIN_DGgIhK38&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MIN_DGgIhK38",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Timer1_B3, PWM TB1.1-2, Up Mode, DCO SMCLK",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MIN_DGgIhK38?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_tb1_16.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_tb1_16.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MIN_DGgIhK38/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0Mn9GnBklhg6Q&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0Mn9GnBklhg6Q",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "Timer1_B3, PWM TB1.1-2, Up Mode, 32KHz ACLK",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0Mn9GnBklhg6Q?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_tb1_17.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_tb1_17.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0Mn9GnBklhg6Q/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MkHjro-OE0dk&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MkHjro-OE0dk",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "WDT, Toggle P1.0, Interval Overflow ISR, DCO SMCLK",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MkHjro-OE0dk?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_WDT_01.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_WDT_01.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MkHjro-OE0dk/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0M-hQrj6Rm8jU&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0M-hQrj6Rm8jU",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "WDT, Toggle P1.0, Interval Overflow ISR, 32kHz ACLK",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0M-hQrj6Rm8jU?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_WDT_02.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_WDT_02.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0M-hQrj6Rm8jU/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MFcdjwglj99I&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MFcdjwglj99I",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "WDT,  Failsafe Clock, WDT mode, DCO SMCLK",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MFcdjwglj99I?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_WDT_04.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_WDT_04.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MFcdjwglj99I/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0M0oOAOcper_k&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0M0oOAOcper_k",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "WDT,  Reset on Invalid Address fetch, Toggle P1.0",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0M0oOAOcper_k?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_WDT_05.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_WDT_05.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0M0oOAOcper_k/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  },
+  {
+    "downloadLink": "api/bundle?vid=msp430ware__3.80.07.00&download=true&analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "makeofflineLink": "api/bundles?vids=msp430ware__3.80.07.00",
+    "removeofflineLink": "api/resources?id=W0MsHK-KJQ7A9o&path=Software/MSP430Ware/Development Tools/MSP-EXP430FR2355/Peripheral Examples/Assembly/MSP430FR2355&removeoffline=true",
+    "_id": "W0MsHK-KJQ7A9o",
+    "advanced": {},
+    "allowPartialDownload": false,
+    "dependencies": [
+      {
+        "refId": "W0Mk8lA2kU2HvU",
+        "semver": "3.80.7",
+        "version": "3.80.07.00",
+        "versionRange": "3.80.7"
+      }
+    ],
+    "description": "WDT,  Failsafe Clock, WDT mode, 32kHz ACLK",
+    "devtools": [
+      "MSP-EXP430FR2355"
+    ],
+    "devtools_category": [
+      "MSP-EXP430FR2355"
+    ],
+    "includedFilesForDownload": [],
+    "link": "api/linkTo/W0MsHK-KJQ7A9o?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355&extname=.asm",
+    "linkType": "local",
+    "name": "msp430fr235x_WDT_06.asm",
+    "package": "MSP430Ware",
+    "packageId": "msp430ware",
+    "packagePath": "msp430ware_3_80_07_00",
+    "packageUId": "msp430ware__3.80.07.00",
+    "packageVersion": "3.80.07.00",
+    "resourceType": "file",
+    "semver": "0.0.0",
+    "version": "UNVERSIONED",
+    "type": "resource",
+    "text": "msp430fr235x_WDT_06.asm",
+    "url": "/api/resources?devtool=MSP-EXP430FR2355&package=com.ti.SIMPLELINK_CC13X0_SDK__3.10.00.11::com.ti.SIMPLELINK_CC13X2_26X2_SDK__2.40.00.81::com.ti.SIMPLELINK_CC13X2_SDK__2.30.00.45::com.ti.SIMPLELINK_CC26X2_SDK__2.30.00.34::com.ti.SIMPLELINK_CC2640R2_SDK__2.40.00.32::com.ti.SIMPLELINK_CC2640R2_SDK_BLE_EXAMPLE_PACK__1.50.00.62::com.ti.SIMPLELINK_CC2652RB_BLE_SDK__3.10.00.15::com.ti.SIMPLELINK_MSP432_SDK__2.40.00.10::com.ti.SIMPLELINK_MSP432E4_SDK__2.40.00.11::com.ti.SIMPLELINK_CC32XX_SDK__2.40.02.00::com.ti.SIMPLELINK_SDK_BLE_PLUGIN__1.40.00.42::com.ti.SIMPLELINK_MSP432_SDK_WIFI_PLUGIN__2.40.00.22::com.ti.SIMPLELINK_SDK_VOICE_DETECTION_PLUGIN__1.50.00.15::com.ti.SIMPLELINK_SDK_TI_15_4_STACK_PLUGIN__2.20.00.05::com.ti.SIMPLELINK_ZIGBEE_SDK_PLUGIN__2.20.00.06::com.ti.AWS_CC32XX__2.20.00.02::com.ti.AWS_MSP432E4__2.20.00.02::energia.core__18.0.0::energia.tool.arm-none-eabi-gcc__6.3.1-20170620::energia.tool.ino2cpp__1.0.3::energia.boards.cc13xx__5.20.0::energia.boards.cc3220emt__5.6.2::energia.boards.msp432r__5.6.3::com.ti.WATSON_MSP432E4__1.20.00.04::com.ti.WATSON_CC32XX__1.20.00.04::com.ti.SAIL__1.30.00.02::com.ti.AZURE_CC32XX__2.20.00.05::com.ti.AZURE_MSP432E4__2.20.00.05::com.ti.SIMPLELINK_SDK_NFC_PLUGIN__2.20.00.08::c2000ware_software_package__1.00.06.00::digital_power_c2000ware_sdk_software_package__1.03.00.00::powerSUITE_software_package__2.04.00.00::msp430ware__3.80.07.00::com.ti.mmwave_industrial_toolbox__3.3.1::com.ti.mmwave_automotive_toolbox__2.4.7::sitara__1.02.00.00::tm4c__2.1.4.178::tirtos_cc13xx_cc26xx__2.21.00.06::tirtos_tivac__2.16.00.08::tirtos_simplelink__2.13.01.09::sysbios__6.50.01.12::xdctools__3.51.01.18&path=Software/MSP430Ware/Development%20Tools/MSP-EXP430FR2355/Peripheral%20Examples/Assembly/MSP430FR2355",
+    "importProject": "api/createProject/W0MsHK-KJQ7A9o/MSP430FR2355?analyticsDevice=undefined&analyticsDevtool=MSP-EXP430FR2355&analyticsPath=Software%2FMSP430Ware%2FDevelopment%20Tools%2FMSP-EXP430FR2355%2FPeripheral%20Examples%2FAssembly%2FMSP430FR2355",
+    "packageOrder": 211
+  }
+]
