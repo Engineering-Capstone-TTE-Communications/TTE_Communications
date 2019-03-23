@@ -235,7 +235,7 @@ void setup_dsp(){
     current_dac_bit_idx = 0;
     set_communications_state(finding_preamble);
     preamble_periods = sizeof(preamble_bytes);//*ASCII_BITS;
-    setup_bit_period_clock();
+    //setup_bit_period_clock();
     setup_dac_fs_clock();
 }
 
@@ -329,7 +329,7 @@ void __attribute__ ((interrupt(TIMER0_B1_VECTOR))) TIMER0_B1_ISR (void)
         case TB0IV_NONE:
             break;                               // No interrupt
         case TB0IV_TBCCR1:
-            poll_dac();
+       //     poll_dac();
             break;                               // CCR1 not used
         case TB0IV_TBCCR2:
             break;// CCR2 not used

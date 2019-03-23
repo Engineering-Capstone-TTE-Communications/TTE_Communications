@@ -39,7 +39,19 @@ void preamble_bot(){
             FIFO_append_byte(usb_rx_fifo_ptr,&temp_bot_buffer);
     }
 }
-
+void fill_tx_bot(){
+        if(usb_tx_fifo_ptr->empty == TRUE){
+            char temp_bot_buffer;
+            temp_bot_buffer = 'y';
+            FIFO_append_byte(usb_tx_fifo_ptr,&temp_bot_buffer);
+            temp_bot_buffer = 'e';
+            FIFO_append_byte(usb_tx_fifo_ptr,&temp_bot_buffer);
+            temp_bot_buffer = 'e';
+            FIFO_append_byte(usb_tx_fifo_ptr,&temp_bot_buffer);
+            temp_bot_buffer = 't';
+            FIFO_append_byte(usb_tx_fifo_ptr,&temp_bot_buffer);
+    }
+}
 unsigned int temp;
 
 int main(void){
@@ -64,7 +76,7 @@ int main(void){
       if(usb_tx_fifo_ptr->empty == FALSE){
           dump_USB_FIFO(usb_tx_fifo_ptr);
       }
-
+      fill_tx_bot();
       preamble_bot();
       dsp();
       //poll_dac();
