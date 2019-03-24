@@ -83,7 +83,7 @@ _q temp;
 int main(void)
 {
 
-    dac_val.phase = _Q(PI);
+    //dac_val.phase = _Q(PI);
     //dac_val.phase_step_size = _Qmpy(_Q(2*PI), _Qdiv(FREQ_1,SAMPLE_FREQUENCY));
     //temp = _Qsin(dac_val.phase)+_Q(1);
 
@@ -135,10 +135,10 @@ void __attribute__ ((interrupt(SAC0_SAC2_VECTOR))) SAC0_ISR (void)
     case SACIV_4:
         SAC0DAT = temp;
 
-        //temp = _Qsin(dac_val.phase)+_Q(1);
-        dac_val.phase += dac_val.phase_step_size;
+        temp = _Qsin(dac_val.phase)+_Q(1);
+        dac_val.phase += 1;
         if(dac_val.phase > _Q(2*PI)){
-            dac_val.phase-=_Q(2*PI);
+            dac_val.phase-= _Q(2*PI);
         }
         break;
     default: break;
