@@ -20,10 +20,10 @@
 #define PI      3.1415926536
 
 #define CLOCK_FREQ  1000000
-#define dac_PRESCALAR 4096
+#define dac_PRESCALAR 250
 #define dac_SPS 10
 
-#define adc_PRESCALAR 4096
+#define adc_PRESCALAR 250
 #define adc_SPS 10
 
 //Shouldn't be #defines ar they are dynamic :C

@@ -47,7 +47,7 @@ void init_USB_registers(void){
 
     // Configure UART
     UCA0CTLW0 |= UCSWRST;
-    UCA0CTLW0 |= UCSSEL_1;  //fBRCLK = 32768
+    UCA0CTLW0 |= UCSSEL_3;  //fBRCLK = 32768
 
     /* Baud rate calculation
      *  Let's aim for 9600 baud (bits/s)
@@ -59,9 +59,9 @@ void init_USB_registers(void){
      * Refer to Users guide pg. 586 for what value to set UCBRSx
      * (Yeah this could be implemented as a LUT)
      * */
-    UCA0BR0 = 6; //int(fBRCLK/Baud Rate)
-    UCA0BR1 = 0x00; //baud rate clock prescalar
-    UCA0MCTLW = 0xEE00;
+    UCA0BR0 = 26; //int(fBRCLK/Baud Rate)
+    UCA0BR1 = 0; //baud rate clock prescalar
+    UCA0MCTLW = UCOS16;
 
     // Initialize eUSCI
     UCA0CTLW0 &= ~UCSWRST;
