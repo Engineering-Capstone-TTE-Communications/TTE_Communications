@@ -18,6 +18,10 @@ typedef struct sine_ROM {
     _q               LUT[dac_SPS];
     unsigned long long accumulator;
 } sine_ROM;
+unsigned int bit_counter;
+unsigned int good_bit_counter;
+unsigned int bad_bit_counter;
+char bit_rate_flag;
 
 sine_ROM DAC_signal;
 sine_ROM ADC_signal;
@@ -46,12 +50,18 @@ void disable_interrupts(){
     __bic_SR_register(GIE);//Disable interrupts
 }
 char tb_ctr;
+char int_buf[256];
 
 void increment_tb_ctr(){
     tb_ctr++;
 }
 
+void setup_rtc(){
+    // Initialize RTC
+     RTCMOD = 32-1;
+     RTCCTL = RTCSS__XT1CLK | RTCSR | RTCPS__1024 | RTCIE;
 
+}
 
 void append_str_to_FIFO(FIFO * fifo_ptr,char * char_buffer){
     while(*char_buffer){
@@ -277,6 +287,8 @@ char dac_data_idx=0,adc_data_idx=0;
 //char dac_data[] = {1,1,0,0,1,1,0,0,1,1,0,0,1,1,0,0};
 //unsigned long long adc_data[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 unsigned long long decision_boundary;
+unsigned long long high_accumulator;
+unsigned long long low_accumulator;
 
 void validate_rom_phase(sine_ROM * ROM){
     if(ROM->phase > ROM->expected_phase+1){
@@ -285,6 +297,8 @@ void validate_rom_phase(sine_ROM * ROM){
     ROM->expected_phase++;
     ROM->phase = ROM->expected_phase;
 }
+
+
 
 void update_adc_ROM(sine_ROM * ROM){
     if(ROM->new_buffer_flag >= 1){
@@ -325,19 +339,35 @@ void setup_roms(){
 void calibrate_decision_boundary(){
     decision_boundary = ((ADC_signal.accumulator)>>decision_boundary_scalar_log2);
     ADC_signal.accumulator = 0;
-
 }
+char new_data_buf;
+char current_dac_data_buf;
 
 void decide_data(){
-    adc_data |= ((ADC_signal.accumulator > decision_boundary)<<adc_data_idx);
+    new_data_buf = (ADC_signal.accumulator > decision_boundary);
+    current_dac_data_buf = (*dac_data & (1<<dac_data_idx))>0;
+
+    adc_data |= (new_data_buf<<adc_data_idx);
     adc_data_idx++;
     ADC_signal.accumulator = 0;
+    if(new_data_buf == 1){
+        high_accumulator+=ADC_signal.accumulator;
+    }else{
+        low_accumulator+=ADC_signal.accumulator;
+    }
+    if(new_data_buf == current_dac_data_buf){
+        good_bit_counter++;
+    }else{
+        bad_bit_counter++;
+    }
+    bit_counter++;
 }
 
 void send_rx_byte(){
     FIFO_append_byte(usb_tx_fifo_ptr,&adc_data);
     adc_data = 0;
 }
+
 //Communications Modes
 
 void check_DSP_flags(){
@@ -347,10 +377,15 @@ void check_DSP_flags(){
 char dac_data_buffer[2] = {1,NULL};
 
 char communications_state = waiting;
+int i;
+char start_stats_spam = FALSE;
 
 void check_protocol(){
-    if(communications_state == waiting && usb_rx_fifo_ptr->empty == FALSE){
+    if(communications_state == waiting && (usb_rx_fifo_ptr->empty == FALSE || start_stats_spam == TRUE)){
         communications_state = sending_preamble;
+        high_accumulator = 0;
+        low_accumulator = 0;
+
         reset_rom_flags_phases(&ADC_signal);
         reset_rom_flags_phases(&DAC_signal);
         adc_data = 0;
@@ -380,7 +415,13 @@ void check_protocol(){
                     calibrate_decision_boundary();
                     FIFO_read_byte(usb_rx_fifo_ptr,&dac_data_buffer[0]);
                     dac_data = &dac_data_buffer[0];
-                    communications_state = sending_data;
+
+                    if(start_stats_spam == FALSE){
+                        communications_state = sending_data;
+                    }else{
+                        communications_state = spam_stats;
+
+                    }
                 }
             }
         }
@@ -408,11 +449,45 @@ void check_protocol(){
         }
     }else if(communications_state == send_outro){
         communications_state = waiting;
+    }else if(communications_state == spam_stats){
+        update_dac_ROM(&DAC_signal);
+        update_adc_ROM(&ADC_signal);
+
+        if(DAC_signal.expected_phase >= DAC_signal.max_phase){
+
+           reset_rom_flags_phases(&ADC_signal);
+           reset_rom_flags_phases(&DAC_signal);
+           DAC_signal.accumulator = 0;
+           dac_data_idx++;
+           decide_data();
+           if(dac_data_idx > ASCII_LENGTH){ //if we increment, will it rollover?
+               adc_data = 0;
+               dac_data_idx = 0;
+               adc_data_idx = 0;
+           }
+        }
     }
 }
 
 
 
+void check_stats(){
+    if(bit_rate_flag >= 1){
+        bit_rate_flag = 0;
+        char * ttbuf = int_buf;
+
+        good_bit_counter = 0;
+        bad_bit_counter = 0;
+        high_accumulator= 0;
+        low_accumulator= 0;
+        bit_counter = 0;
+
+        for (i = 0; i <= 1; i++){
+            append_str_to_FIFO(usb_tx_fifo_ptr,ttbuf);
+            ttbuf++;
+        }
+    }
+}
 
 int main(void){
     stop_watchdog_timer();
@@ -421,19 +496,23 @@ int main(void){
     setup_dac();
     setup_roms();
     set_8mhz_clk();
+    setup_rtc();
     init_USB();
 
     reset_rom_flags_phases(&ADC_signal);
     reset_rom_flags_phases(&DAC_signal);
 
     enable_interrupts();
-
+    start_stats_spam = TRUE;
     while(1){
         if(usb_tx_fifo_ptr->empty == FALSE){
            dump_USB_FIFO(usb_tx_fifo_ptr);
         }
-        //spam_preamble();
+
+
+
         check_protocol();
+        check_stats();
     }
 }
 /*
@@ -511,6 +590,34 @@ void __attribute__ ((interrupt(ADC_VECTOR))) ADC_ISR (void)
             break;                                           // Clear CPUOFF bit from 0(SR)
         default:
             break;
+    }
+}
+int last_bit_count = 0xbeef;
+#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
+#pragma vector = RTC_VECTOR
+__interrupt void RTC_ISR(void)
+#elif defined(__GNUC__)
+void __attribute__ ((interrupt(RTC_VECTOR))) RTC_ISR (void)
+#else
+#error Compiler not supported!
+#endif
+{
+    switch(__even_in_range(RTCIV, RTCIV_RTCIF))
+    {
+        case RTCIV_NONE : break;            // No interrupt pending
+        case RTCIV_RTCIF:                   // RTC Overflow
+            if(bit_counter > 0){
+                bit_rate_flag++;
+                if(last_bit_count != bit_counter){
+                    last_bit_count = bit_counter;
+                }else{
+                    sprintf(int_buf,"\r\nrb = %d/%d s Good:Bad %d:%d\nPower High = %d\nPower Low = %d\r\n",
+                            bit_counter,bit_rate_flag,good_bit_counter,bad_bit_counter,high_accumulator,low_accumulator);
+                    last_bit_count = 0xbeef;
+                }
+            }
+            break;
+        default:          break;
     }
 }
 

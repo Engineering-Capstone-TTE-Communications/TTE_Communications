@@ -20,10 +20,10 @@
 #define PI      3.1415926536
 
 #define CLOCK_FREQ  1000000
-#define dac_PRESCALAR 250
+#define dac_PRESCALAR 300
 #define dac_SPS 10
 
-#define adc_PRESCALAR 250
+#define adc_PRESCALAR 300
 #define adc_SPS 10
 
 //Shouldn't be #defines ar they are dynamic :C
@@ -36,7 +36,8 @@ typedef enum communications_modes{
   waiting = 0,
   sending_preamble,
   sending_data,
-  send_outro
+  send_outro,
+  spam_stats
 } communications_modes;
 
 
