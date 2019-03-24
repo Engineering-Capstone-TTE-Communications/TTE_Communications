@@ -19,13 +19,6 @@ typedef struct sine_ROM {
     unsigned long long accumulator;
 } sine_ROM;
 
-extern sine_ROM DAC_signal;
-extern sine_ROM ADC_signal;
-sine_ROM generate_sine_ROM();
-
-
-
-
 sine_ROM DAC_signal;
 sine_ROM ADC_signal;
 
@@ -60,42 +53,43 @@ void increment_tb_ctr(){
 
 
 
-void append_str_to_FIFO(char * char_buffer){
-            while(*char_buffer){
-                FIFO_append_byte(usb_tx_fifo_ptr,&char_buffer);
-                char_buffer++;
-            }
+void append_str_to_FIFO(FIFO * fifo_ptr,char * char_buffer){
+    while(*char_buffer){
+        FIFO_append_byte(fifo_ptr,char_buffer);
+        char_buffer++;
+    }
 }
 
 const char escape_character = '\\';
-const char preamble_code[] = {0x55,0xAA,0x71,0xBE,0xEF};
-const char exit_code[] = {'b',escape_character,'y',escape_character,'e',escape_character};
-const char spam[] = {'y','e','e','t'};
+const char preamble_code[] = {0x55,0x55,0x55,0x55,NULL};
+const char exit_code[] = {'b','\\','y','\\','e','\\',NULL};
+const char spam[] = {'y','e','e','t',NULL};
+
+#define decision_boundary_scalar_log2 5
 
 void queue_exit_code(){
     char * buf = exit_code;
-    append_str_to_FIFO(buf);
+    append_str_to_FIFO(usb_tx_fifo_ptr,buf);
 }
 
 void queue_preamble_code(){
     char * buf = preamble_code;
-    append_str_to_FIFO(buf);
+    append_str_to_FIFO(usb_rx_fifo_ptr,buf);
 }
 
 void spam_preamble(){
-        if(usb_rx_fifo_ptr->empty == TRUE){
-            queue_preamble_code();
+    if(usb_rx_fifo_ptr->empty == TRUE){
+        char * buf = spam;
+        append_str_to_FIFO(usb_rx_fifo_ptr,buf);
     }
 }
 
 void spam_usb(){
-    char * buf = spam;
-    append_str_to_FIFO(buf);
+    if(usb_tx_fifo_ptr->empty == TRUE){
+        char * buf = spam;
+        append_str_to_FIFO(usb_tx_fifo_ptr,buf);
+    }
 }
-
-
-
-
 
 void setup_adc(){
 
@@ -169,7 +163,6 @@ void setup_dac(){
 }
 
 void init_adc_dac_clks(){
-
     TB1CCR0 = adc_PRESCALAR;                                          // TB1.1 ADC trigger
     TB1CCR1 = (adc_PRESCALAR>>1);                                         // PWM Period
     TB1CCTL1 = OUTMOD_6;                                      // TB1CCR0 toggle
@@ -183,6 +176,9 @@ void init_adc_dac_clks(){
     TB2CTL = TBSSEL__SMCLK | MC_1 | TBCLR;     // SMCLK, up mode, clear TBR
 }
 
+char * dac_data=NULL;
+char adc_data;
+
 char dac_data_idx=0,adc_data_idx=0;
 
 #define n_symbols 16
@@ -190,16 +186,14 @@ char dac_data_idx=0,adc_data_idx=0;
 //FIFO dac_data;
 //uint_FIFO adc_data;
 
-char dac_data[] = {1,1,0,0,1,1,0,0,1,1,0,0,1,1,0,0};
-unsigned long long adc_data[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//char dac_data[] = {1,1,0,0,1,1,0,0,1,1,0,0,1,1,0,0};
+//unsigned long long adc_data[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 unsigned long long decision_boundary;
-
 
 void validate_rom_phase(sine_ROM * ROM){
     if(ROM->phase > ROM->expected_phase+1){
         ROM->error_flag = 1;
     }
-
     ROM->expected_phase++;
     ROM->phase = ROM->expected_phase;
 }
@@ -211,13 +205,12 @@ void update_adc_ROM(sine_ROM * ROM){
         ROM->LUT[ROM->expected_phase] = _Q(ROM->buffer);
         validate_rom_phase(ROM);
     }
-
 }
 
 void update_dac_ROM(sine_ROM * ROM){
     if(ROM->new_buffer_flag >= 1){
         ROM->new_buffer_flag = 0;
-        if(dac_data[dac_data_idx] >= 1){
+        if(*dac_data & (1<<dac_data_idx)){
             ROM->buffer = ROM->LUT[ROM->expected_phase];
         }else{
             ROM->buffer = 0;
@@ -235,6 +228,7 @@ void reset_rom_flags_phases(sine_ROM * ROM){
     ROM->phase  = 0;
     ROM->expected_phase  = 0;
 }
+
 void setup_roms(){
     ADC_signal.max_phase = adc_SPS;
     DAC_signal.max_phase = dac_SPS;
@@ -247,49 +241,81 @@ void calibrate_decision_boundary(){
 }
 
 void decide_data(){
-    adc_data[adc_data_idx] = (ADC_signal.accumulator > decision_boundary);
+    adc_data |= ((ADC_signal.accumulator > decision_boundary)<<adc_data_idx);
     adc_data_idx++;
     ADC_signal.accumulator = 0;
 }
+
+void send_rx_byte(){
+    FIFO_append_byte(usb_tx_fifo_ptr,&adc_data);
+    adc_data = 0;
+}
 //Communications Modes
 
+void check_DSP_flags(){
+    update_adc_ROM(&ADC_signal);
+    update_dac_ROM(&DAC_signal);
+}
+char dac_data_buffer[2] = {1,NULL};
 
 char communications_state = waiting;
 
 void check_protocol(){
-    if(communications_state == waiting && usb_tx_fifo_ptr->empty == FALSE){
+    if(communications_state == waiting && usb_rx_fifo_ptr->empty == FALSE){
         communications_state = sending_preamble;
         reset_rom_flags_phases(&ADC_signal);
         reset_rom_flags_phases(&DAC_signal);
+        adc_data = 0;
+        dac_data = &preamble_code;
         dac_data_idx = 0;
         adc_data_idx = 0;
-        ADC_signal.accumulator = 0;
         DAC_signal.accumulator = 0;
+
+
+        update_dac_ROM(&DAC_signal);
+        update_adc_ROM(&ADC_signal);
+
     }else if(communications_state == sending_preamble){
+        update_dac_ROM(&DAC_signal);
+        update_adc_ROM(&ADC_signal);
+
         if(DAC_signal.expected_phase >= DAC_signal.max_phase){
             reset_rom_flags_phases(&ADC_signal);
             reset_rom_flags_phases(&DAC_signal);
             DAC_signal.accumulator = 0;
             dac_data_idx++;
-
-            if(dac_data_idx >= n_symbols){ //if we increment, will it rollover?
+            if(dac_data_idx > ASCII_LENGTH){ //if we increment, will it rollover?
                 dac_data_idx = 0;
                 adc_data_idx = 0;
-                calibrate_decision_boundary();
-                communications_state = sending_data;
+                dac_data++;
+                if(!(*dac_data)){
+                    calibrate_decision_boundary();
+                    FIFO_read_byte(usb_rx_fifo_ptr,&dac_data_buffer[0]);
+                    dac_data = &dac_data_buffer[0];
+                    communications_state = sending_data;
+                }
             }
         }
     }else if(communications_state == sending_data){
+        update_dac_ROM(&DAC_signal);
+        update_adc_ROM(&ADC_signal);
         if(DAC_signal.expected_phase >= DAC_signal.max_phase){
             reset_rom_flags_phases(&ADC_signal);
             reset_rom_flags_phases(&DAC_signal);
             DAC_signal.accumulator = 0;
             dac_data_idx++;
             decide_data();
-            if(dac_data_idx >= n_symbols){ //if we increment, will it rollover?
+            if(dac_data_idx > ASCII_LENGTH){ //if we increment, will it rollover?
+                send_rx_byte();
                 dac_data_idx = 0;
                 adc_data_idx = 0;
-                communications_state = waiting;
+                if(usb_rx_fifo_ptr->empty == FALSE){
+                    FIFO_read_byte(usb_rx_fifo_ptr,&dac_data_buffer[0]);
+                    dac_data = &dac_data_buffer[0];
+                }else{
+                    communications_state = waiting;
+                    dac_data = NULL;
+                }
             }
         }
     }else if(communications_state == send_outro){
@@ -297,11 +323,7 @@ void check_protocol(){
     }
 }
 
-void check_DSP_flags(){
-    update_adc_ROM(&ADC_signal);
-    update_dac_ROM(&DAC_signal);
 
-}
 
 
 int main(void){
@@ -312,7 +334,7 @@ int main(void){
     setup_roms();
 
     init_USB();
-    //initialize_filter_clk();
+
     reset_rom_flags_phases(&ADC_signal);
     reset_rom_flags_phases(&DAC_signal);
 
@@ -320,10 +342,9 @@ int main(void){
 
     while(1){
         if(usb_tx_fifo_ptr->empty == FALSE){
-                        //dump_USB_FIFO(usb_tx_fifo_ptr);
+           dump_USB_FIFO(usb_tx_fifo_ptr);
         }
-        spam_preamble();
-        check_DSP_flags();
+        //spam_preamble();
         check_protocol();
     }
 }

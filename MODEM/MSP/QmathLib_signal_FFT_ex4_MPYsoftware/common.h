@@ -25,10 +25,11 @@
 
 #define adc_PRESCALAR 4096
 #define adc_SPS 10
-#define decision_boundary_scalar_log2 5
 
 //Shouldn't be #defines ar they are dynamic :C
 #define adc_downsample_factor 100
+
+#define ASCII_LENGTH 7
 
 #define min_accumulator_diff 100
 typedef enum communications_modes{
