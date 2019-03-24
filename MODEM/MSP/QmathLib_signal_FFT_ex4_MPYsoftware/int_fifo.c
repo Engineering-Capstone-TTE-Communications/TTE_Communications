@@ -19,7 +19,7 @@ void uint_FIFO_append_byte(uint_FIFO * fifo, unsigned int * data_in){
     //Check current FIFO state
     fifo->empty = FALSE;
 
-    if(fifo->net_elements < SAMPLE_DEPTH+1-1)
+    if(fifo->net_elements < adc_SPS+1-1)
         fifo->net_elements++;
     else
         fifo->full = TRUE;
@@ -28,7 +28,7 @@ void uint_FIFO_append_byte(uint_FIFO * fifo, unsigned int * data_in){
     *fifo->tail = *data_in;
 
     //Set new tail address
-    if(fifo->tail == (&fifo->data[SAMPLE_DEPTH+1-1])){
+    if(fifo->tail == (&fifo->data[adc_SPS+1-1])){
         fifo->tail = &fifo->data[0];
     }else{
         fifo->tail++;
@@ -48,7 +48,7 @@ void uint_FIFO_read_byte(uint_FIFO * fifo,  unsigned int * output_buffer){
     *output_buffer = *fifo->head;
 
     //New head address logic
-    if((fifo->head == &fifo->data[SAMPLE_DEPTH+1-1])){
+    if((fifo->head == &fifo->data[adc_SPS+1-1])){
         fifo->head = &fifo->data[0];
     }else{
         fifo->head++;

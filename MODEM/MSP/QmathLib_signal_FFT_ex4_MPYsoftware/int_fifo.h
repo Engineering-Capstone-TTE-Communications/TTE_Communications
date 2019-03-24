@@ -12,7 +12,7 @@
 #include "common.h"
 
 typedef struct {
-    unsigned int data[SAMPLE_DEPTH+1];
+    unsigned int data[adc_SPS+1];
     unsigned int * head; //Read from head
     unsigned int * tail; //Write to tail
     unsigned int empty;

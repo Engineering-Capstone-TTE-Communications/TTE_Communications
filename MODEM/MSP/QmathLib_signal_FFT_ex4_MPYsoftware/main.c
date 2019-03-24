@@ -4,14 +4,7 @@
 #include <stdint.h>
 #include "usb.h"
 #include "filter.h"
-#define PI      3.1415926536
 
-#define CLOCK_FREQ  1000000
-#define dac_PRESCALAR 128
-#define dac_SPS 128
-
-#define adc_PRESCALAR 512
-#define adc_SPS 32
 
 typedef struct sine_ROM {
     unsigned int          phase;
@@ -24,7 +17,6 @@ typedef struct sine_ROM {
     unsigned int          buffer;
     _q               LUT[dac_SPS];
     unsigned long long accumulator;
-
 } sine_ROM;
 
 extern sine_ROM DAC_signal;
@@ -66,34 +58,40 @@ void increment_tb_ctr(){
     tb_ctr++;
 }
 
-void preamble_bot(){
-        if(usb_rx_fifo_ptr->empty == TRUE){
-            char temp_bot_buffer;
-            temp_bot_buffer = 'y';
-            FIFO_append_byte(usb_rx_fifo_ptr,&temp_bot_buffer);
-            temp_bot_buffer = 'e';
-            FIFO_append_byte(usb_rx_fifo_ptr,&temp_bot_buffer);
-            temp_bot_buffer = 'e';
-            FIFO_append_byte(usb_rx_fifo_ptr,&temp_bot_buffer);
-            temp_bot_buffer = 't';
-            FIFO_append_byte(usb_rx_fifo_ptr,&temp_bot_buffer);
-    }
+
+
+void append_str_to_FIFO(char * char_buffer){
+            while(*char_buffer){
+                FIFO_append_byte(usb_tx_fifo_ptr,&char_buffer);
+                char_buffer++;
+            }
 }
-void fill_tx_bot(){
-        if(usb_tx_fifo_ptr->empty == TRUE){
-            char temp_bot_buffer;
-            temp_bot_buffer = 'y';
-            FIFO_append_byte(usb_tx_fifo_ptr,&temp_bot_buffer);
-            temp_bot_buffer = 'e';
-            FIFO_append_byte(usb_tx_fifo_ptr,&temp_bot_buffer);
-            temp_bot_buffer = 'e';
-            FIFO_append_byte(usb_tx_fifo_ptr,&temp_bot_buffer);
-            temp_bot_buffer = 't';
-            FIFO_append_byte(usb_tx_fifo_ptr,&temp_bot_buffer);
+
+const char escape_character = '\\';
+const char preamble_code[] = {0x55,0xAA,0x71,0xBE,0xEF};
+const char exit_code[] = {'b',escape_character,'y',escape_character,'e',escape_character};
+const char spam[] = {'y','e','e','t'};
+
+void queue_exit_code(){
+    char * buf = exit_code;
+    append_str_to_FIFO(buf);
+}
+
+void queue_preamble_code(){
+    char * buf = preamble_code;
+    append_str_to_FIFO(buf);
+}
+
+void spam_preamble(){
+        if(usb_rx_fifo_ptr->empty == TRUE){
+            queue_preamble_code();
     }
 }
 
-unsigned int temp;
+void spam_usb(){
+    char * buf = spam;
+    append_str_to_FIFO(buf);
+}
 
 
 
@@ -163,7 +161,7 @@ void setup_dac(){
      SAC0OA |= SACEN + OAEN;                    // Enable SAC and OA
 
      // Use TB2.1 as DAC hardware trigger
-     TB2CCR0 = dac_SPS;                           // PWM Period/2
+     TB2CCR0 = dac_PRESCALAR;                           // PWM Period/2
      TB2CCTL1 = OUTMOD_6;                       // TBCCR1 toggle/set
      TB2CCR1 = 1;                              // TBCCR1 PWM duty cycle
      TB2CTL = TBSSEL__SMCLK | MC_1 | TBCLR;     // SMCLK, up mode, clear TBR
@@ -188,7 +186,6 @@ void init_adc_dac_clks(){
 char dac_data_idx=0,adc_data_idx=0;
 
 #define n_symbols 16
-#define decision_boundary_scalar_log2 5
 
 //FIFO dac_data;
 //uint_FIFO adc_data;
@@ -197,7 +194,6 @@ char dac_data[] = {1,1,0,0,1,1,0,0,1,1,0,0,1,1,0,0};
 unsigned long long adc_data[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 unsigned long long decision_boundary;
 
-char in_preamble=1;
 
 void validate_rom_phase(sine_ROM * ROM){
     if(ROM->phase > ROM->expected_phase+1){
@@ -239,7 +235,6 @@ void reset_rom_flags_phases(sine_ROM * ROM){
     ROM->phase  = 0;
     ROM->expected_phase  = 0;
 }
-
 void setup_roms(){
     ADC_signal.max_phase = adc_SPS;
     DAC_signal.max_phase = dac_SPS;
@@ -247,46 +242,65 @@ void setup_roms(){
 
 void calibrate_decision_boundary(){
     decision_boundary = ((ADC_signal.accumulator)>>decision_boundary_scalar_log2);
+    ADC_signal.accumulator = 0;
+
 }
 
 void decide_data(){
     adc_data[adc_data_idx] = (ADC_signal.accumulator > decision_boundary);
-    __no_operation();
     adc_data_idx++;
+    ADC_signal.accumulator = 0;
 }
+//Communications Modes
+
+
+char communications_state = waiting;
+
+void check_protocol(){
+    if(communications_state == waiting && usb_tx_fifo_ptr->empty == FALSE){
+        communications_state = sending_preamble;
+        reset_rom_flags_phases(&ADC_signal);
+        reset_rom_flags_phases(&DAC_signal);
+        dac_data_idx = 0;
+        adc_data_idx = 0;
+        ADC_signal.accumulator = 0;
+        DAC_signal.accumulator = 0;
+    }else if(communications_state == sending_preamble){
+        if(DAC_signal.expected_phase >= DAC_signal.max_phase){
+            reset_rom_flags_phases(&ADC_signal);
+            reset_rom_flags_phases(&DAC_signal);
+            DAC_signal.accumulator = 0;
+            dac_data_idx++;
+
+            if(dac_data_idx >= n_symbols){ //if we increment, will it rollover?
+                dac_data_idx = 0;
+                adc_data_idx = 0;
+                calibrate_decision_boundary();
+                communications_state = sending_data;
+            }
+        }
+    }else if(communications_state == sending_data){
+        if(DAC_signal.expected_phase >= DAC_signal.max_phase){
+            reset_rom_flags_phases(&ADC_signal);
+            reset_rom_flags_phases(&DAC_signal);
+            DAC_signal.accumulator = 0;
+            dac_data_idx++;
+            decide_data();
+            if(dac_data_idx >= n_symbols){ //if we increment, will it rollover?
+                dac_data_idx = 0;
+                adc_data_idx = 0;
+                communications_state = waiting;
+            }
+        }
+    }else if(communications_state == send_outro){
+        communications_state = waiting;
+    }
+}
+
 void check_DSP_flags(){
     update_adc_ROM(&ADC_signal);
     update_dac_ROM(&DAC_signal);
-    if(DAC_signal.expected_phase >= DAC_signal.max_phase){
-        if(in_preamble == 0){
-            decide_data();
-            ADC_signal.accumulator = 0;
-        }
 
-
-
-        dac_data_idx++;
-
-        reset_rom_flags_phases(&ADC_signal);
-        reset_rom_flags_phases(&DAC_signal);
-        DAC_signal.accumulator = 0;
-        if(dac_data_idx >= n_symbols){ //if we increment, will it rollover?
-
-            dac_data_idx = 0;
-            adc_data_idx = 0;
-
-            if(in_preamble == 1){
-                calibrate_decision_boundary();
-                ADC_signal.accumulator = 0;
-
-                in_preamble = 0;
-            }else{
-                in_preamble = 1;
-            }
-        }else{
-
-        }
-    }
 }
 
 
@@ -299,8 +313,6 @@ int main(void){
 
     init_USB();
     //initialize_filter_clk();
-
-    in_preamble = 1;
     reset_rom_flags_phases(&ADC_signal);
     reset_rom_flags_phases(&DAC_signal);
 
@@ -308,12 +320,12 @@ int main(void){
 
     while(1){
         if(usb_tx_fifo_ptr->empty == FALSE){
-                        dump_USB_FIFO(usb_tx_fifo_ptr);
+                        //dump_USB_FIFO(usb_tx_fifo_ptr);
         }
-        preamble_bot();
+        spam_preamble();
         check_DSP_flags();
+        check_protocol();
     }
-
 }
 /*
 int main(void){
