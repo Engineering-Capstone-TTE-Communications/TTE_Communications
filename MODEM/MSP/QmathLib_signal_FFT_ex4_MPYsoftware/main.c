@@ -214,7 +214,7 @@ void Software_Trim()
     while(CSCTL7 & (FLLUNLOCK0 | FLLUNLOCK1)); // Poll until FLL is locked
 }
 
-int set_8mhz_clk(void)
+void set_8mhz_clk(void)
 {
     WDTCTL = WDTPW | WDTHOLD;               // Stop watchdog timer
 
@@ -255,7 +255,7 @@ void setup_dac(){
      // Use TB2.1 as DAC hardware trigger
      TB2CCR0 = dac_PRESCALAR;                           // PWM Period/2
      TB2CCTL1 = OUTMOD_6;                       // TBCCR1 toggle/set
-     TB2CCR1 = 1;                              // TBCCR1 PWM duty cycle
+     TB2CCR1 = (2);                              // TBCCR1 PWM duty cycle
      TB2CTL = TBSSEL__SMCLK | MC_1 | TBCLR;     // SMCLK, up mode, clear TBR
      DAC_signal = generate_sine_ROM();
 }
@@ -337,7 +337,7 @@ void setup_roms(){
 }
 
 void calibrate_decision_boundary(){
-    decision_boundary = ((ADC_signal.accumulator)>>decision_boundary_scalar_log2);
+    decision_boundary = ((ADC_signal.accumulator)>>decision_boundary_scalar_log2)*.9;
     ADC_signal.accumulator = 0;
 }
 char new_data_buf;
@@ -353,11 +353,13 @@ void decide_data(){
     }else{
         low_accumulator+=ADC_signal.accumulator;
     }
+
     if(new_data_buf == current_dac_data_buf){
         good_bit_counter++;
     }else{
         bad_bit_counter++;
     }
+
     adc_data_idx++;
     ADC_signal.accumulator = 0;
     bit_counter++;
@@ -404,7 +406,6 @@ void check_protocol(){
         if(DAC_signal.expected_phase >= DAC_signal.max_phase){
             reset_rom_flags_phases(&ADC_signal);
             reset_rom_flags_phases(&DAC_signal);
-            DAC_signal.accumulator = 0;
             dac_data_idx++;
             if(dac_data_idx > ASCII_LENGTH){ //if we increment, will it rollover?
                 dac_data_idx = 0;
@@ -427,12 +428,13 @@ void check_protocol(){
         update_dac_ROM(&DAC_signal);
         update_adc_ROM(&ADC_signal);
         if(DAC_signal.expected_phase >= DAC_signal.max_phase){
-            reset_rom_flags_phases(&ADC_signal);
             reset_rom_flags_phases(&DAC_signal);
+            reset_rom_flags_phases(&ADC_signal);
+
             DAC_signal.accumulator = 0;
             decide_data();
             dac_data_idx++;
-            if(dac_data_idx > ASCII_LENGTH){ //if we increment, will it rollover?
+            if(dac_data_idx >= ASCII_LENGTH){ //if we increment, will it rollover?
                 send_rx_byte();
                 dac_data_idx = 0;
                 adc_data_idx = 0;
@@ -448,17 +450,16 @@ void check_protocol(){
     }else if(communications_state == send_outro){
         communications_state = waiting;
     }else if(communications_state == spam_stats){
-        update_dac_ROM(&DAC_signal);
         update_adc_ROM(&ADC_signal);
+        update_dac_ROM(&DAC_signal);
 
         if(DAC_signal.expected_phase >= DAC_signal.max_phase){
-
-           reset_rom_flags_phases(&ADC_signal);
            reset_rom_flags_phases(&DAC_signal);
+           reset_rom_flags_phases(&ADC_signal);
+
            DAC_signal.accumulator = 0;
            decide_data();
            dac_data_idx++;
-
            if(dac_data_idx > ASCII_LENGTH){ //if we increment, will it rollover?
                adc_data = 0;
                dac_data_idx = 0;
@@ -472,8 +473,6 @@ void check_protocol(){
 char clear_to_rtc = TRUE;
 void check_stats(){
     if(clear_to_rtc == FALSE){
-        bit_rate_flag = 0;
-
         char * ttbuf = int_buf;
 
         good_bit_counter = 0;
@@ -486,6 +485,7 @@ void check_stats(){
             append_str_to_FIFO(usb_tx_fifo_ptr,ttbuf);
             ttbuf++;
         }
+
         sprintf(int_buf,"\r\nBye\n\0");
         clear_to_rtc = TRUE;
     }
@@ -506,6 +506,7 @@ int main(void){
 
     enable_interrupts();
     start_stats_spam = TRUE;
+
     while(1){
         if(usb_tx_fifo_ptr->empty == FALSE){
            dump_USB_FIFO(usb_tx_fifo_ptr);
@@ -517,27 +518,7 @@ int main(void){
         check_stats();
     }
 }
-/*
-int main(void){
 
-
-
-
-
-  while(1){
-      if(usb_tx_fifo_ptr->empty == FALSE){
-          dump_USB_FIFO(usb_tx_fifo_ptr);
-      }
-      preamble_bot();
-
-      fill_tx_bot();
-      dsp();
-      //poll_dac();
-  }
-
-}
-
-*/
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = SAC0_SAC2_VECTOR
 __interrupt void SAC0_ISR(void)
@@ -585,7 +566,9 @@ void __attribute__ ((interrupt(ADC_VECTOR))) ADC_ISR (void)
         case ADCIV_ADCINIFG:
             break;
         case ADCIV_ADCIFG:
-            ADC_signal.buffer = ADCMEM0*ADCMEM0;
+            ADC_signal.buffer = ADCMEM0;
+
+            ADC_signal.buffer = ADC_signal.buffer*ADC_signal.buffer;
             ADC_signal.new_buffer_flag++;
             ADC_signal.phase++;
             ADCIFG = 0;
@@ -609,15 +592,14 @@ void __attribute__ ((interrupt(RTC_VECTOR))) RTC_ISR (void)
     {
         case RTCIV_NONE : break;            // No interrupt pending
         case RTCIV_RTCIF:                   // RTC Overflow
-            if(clear_to_rtc == 1){
+            if(clear_to_rtc == TRUE){
                 if(seconds_ctr == 0 && bit_counter > 0){
                     seconds_ctr++;
-                }else if (seconds_ctr == 2){
-                        sprintf(int_buf,"\r\nGood:Bad %d:%d\nrb=%d/s\n",
-                                good_bit_counter,bad_bit_counter,(bit_counter>>1));
+                }else if (seconds_ctr >> 2){
                         clear_to_rtc = FALSE;
+                        //sprintf(int_buf,"\r\nGood,Bad,Total,Time(s)\n")
+                        sprintf(int_buf,"%d,%d,%d\n",good_bit_counter,bad_bit_counter,(bit_counter>>1));
                         seconds_ctr = 0;
-
                 }else if(seconds_ctr > 0){
                         seconds_ctr++;
 
