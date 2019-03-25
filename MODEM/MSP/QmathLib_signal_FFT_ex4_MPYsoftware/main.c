@@ -18,9 +18,9 @@ typedef struct sine_ROM {
     _q               LUT[dac_SPS];
     unsigned long long accumulator;
 } sine_ROM;
-unsigned int bit_counter;
-unsigned int good_bit_counter;
-unsigned int bad_bit_counter;
+ int bit_counter;
+ int good_bit_counter;
+ int bad_bit_counter;
 char bit_rate_flag;
 
 sine_ROM DAC_signal;
@@ -289,6 +289,8 @@ char dac_data_idx=0,adc_data_idx=0;
 unsigned long long decision_boundary;
 unsigned long long high_accumulator;
 unsigned long long low_accumulator;
+int high_accumulator_int;
+int low_accumulator_int;
 
 void validate_rom_phase(sine_ROM * ROM){
     if(ROM->phase > ROM->expected_phase+1){
@@ -304,6 +306,12 @@ void update_adc_ROM(sine_ROM * ROM){
     if(ROM->new_buffer_flag >= 1){
         ROM->new_buffer_flag = 0;
         ROM->accumulator += (ROM->buffer);
+        if(*dac_data & (1<<dac_data_idx)){
+            high_accumulator +=(ROM->buffer);
+        }else{
+            low_accumulator +=(ROM->buffer);
+        }
+
         ROM->LUT[ROM->expected_phase] = _Q(ROM->buffer);
         validate_rom_phase(ROM);
     }
@@ -329,6 +337,8 @@ void reset_rom_flags_phases(sine_ROM * ROM){
     ROM->buffer  = 0;
     ROM->phase  = 0;
     ROM->expected_phase  = 0;
+
+
 }
 
 void setup_roms(){
@@ -348,11 +358,7 @@ void decide_data(){
     current_dac_data_buf = (*dac_data & (1<<dac_data_idx))>0;
 
     adc_data |= (new_data_buf<<adc_data_idx);
-    if(new_data_buf == 1){
-        high_accumulator+=ADC_signal.accumulator;
-    }else{
-        low_accumulator+=ADC_signal.accumulator;
-    }
+
 
     if(new_data_buf == current_dac_data_buf){
         good_bit_counter++;
@@ -381,7 +387,7 @@ char dac_data_buffer[2] = {1,NULL};
 char communications_state = waiting;
 int i;
 char start_stats_spam = FALSE;
-
+char serial_buf[256];
 void check_protocol(){
     if(communications_state == waiting && (usb_rx_fifo_ptr->empty == FALSE || start_stats_spam == TRUE)){
         communications_state = sending_preamble;
@@ -395,6 +401,8 @@ void check_protocol(){
         adc_data_idx = 0;
         DAC_signal.accumulator = 0;
 
+        high_accumulator= 0;
+        low_accumulator= 0;
 
         update_dac_ROM(&DAC_signal);
         update_adc_ROM(&ADC_signal);
@@ -406,13 +414,23 @@ void check_protocol(){
         if(DAC_signal.expected_phase >= DAC_signal.max_phase){
             reset_rom_flags_phases(&ADC_signal);
             reset_rom_flags_phases(&DAC_signal);
+
             dac_data_idx++;
+
             if(dac_data_idx > ASCII_LENGTH){ //if we increment, will it rollover?
                 dac_data_idx = 0;
                 adc_data_idx = 0;
                 dac_data++;
                 if(!(*dac_data)){
+                    high_accumulator_int = (high_accumulator>>7);
+                    low_accumulator_int = (low_accumulator>>7);
+
+                    sprintf(serial_buf,"signal + noise power:%d*2^7, noise power: %d*2^7\n\0",high_accumulator_int,low_accumulator_int);
+
+                    append_str_to_FIFO(usb_tx_fifo_ptr,serial_buf);
+
                     calibrate_decision_boundary();
+
                     if(start_stats_spam == FALSE){
                         communications_state = sending_data;
                         FIFO_read_byte(usb_rx_fifo_ptr,&dac_data_buffer[0]);
@@ -469,22 +487,21 @@ void check_protocol(){
     }
 }
 
+char mem_buf = TRUE;
 
 char clear_to_rtc = TRUE;
 void check_stats(){
     if(clear_to_rtc == FALSE){
-        char * ttbuf = int_buf;
+        char * ttbuf = &int_buf;
 
         good_bit_counter = 0;
         bad_bit_counter = 0;
-        high_accumulator= 0;
-        low_accumulator= 0;
+
         bit_counter = 0;
 
-        for (i = 0; i <= 1; i++){
-            append_str_to_FIFO(usb_tx_fifo_ptr,ttbuf);
-            ttbuf++;
-        }
+        append_str_to_FIFO(usb_tx_fifo_ptr,ttbuf);
+
+
 
         sprintf(int_buf,"\r\nBye\n\0");
         clear_to_rtc = TRUE;
@@ -595,19 +612,26 @@ void __attribute__ ((interrupt(RTC_VECTOR))) RTC_ISR (void)
             if(clear_to_rtc == TRUE){
                 if(seconds_ctr == 0 && bit_counter > 0){
                     seconds_ctr++;
-                }else if (seconds_ctr >> 2){
+                    good_bit_counter = 0;
+                    bad_bit_counter = 0;
+                    bit_counter = 0;
+                }else if (seconds_ctr > 8){
                         clear_to_rtc = FALSE;
                         //sprintf(int_buf,"\r\nGood,Bad,Total,Time(s)\n")
-                        sprintf(int_buf,"%d,%d,%d\n",good_bit_counter,bad_bit_counter,(bit_counter>>1));
+                        sprintf(int_buf,"%d,%d,%d\n\0",seconds_ctr-1,bad_bit_counter,bit_counter);
                         seconds_ctr = 0;
+                        good_bit_counter = 0;
+                        bad_bit_counter = 0;
+                        bit_counter = 0;
                 }else if(seconds_ctr > 0){
-                        seconds_ctr++;
-
+                    seconds_ctr++;
                 }
             }
+
             break;
 
-        default:          break;
+        default:
+            break;
     }
 }
 
