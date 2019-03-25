@@ -126,7 +126,7 @@ void setup_adc(){
     ADCCTL1 |= ADCSHS_2 | ADCCONSEQ_2 | ADCSSEL_3;                        // repeat single channel; TB1.1 trig sample start
     ADCCTL2 &= ~ADCRES;                                       // clear ADCRES in ADCCTL
     ADCCTL2 |= ADCRES_2;                                      // 12-bit conversion results
-    ADCMCTL0 |= ADCINCH_1;                                    // A1 ADC input select; Vref=1.5V
+    ADCMCTL0 |= ADCINCH_0;                                    // A1 ADC input select; Vref=1.5V
     ADCIE |= ADCIE0;                                          // Enable ADC conv complete interrupt
 
     // Configure reference
@@ -348,8 +348,6 @@ void decide_data(){
     current_dac_data_buf = (*dac_data & (1<<dac_data_idx))>0;
 
     adc_data |= (new_data_buf<<adc_data_idx);
-    adc_data_idx++;
-    ADC_signal.accumulator = 0;
     if(new_data_buf == 1){
         high_accumulator+=ADC_signal.accumulator;
     }else{
@@ -360,6 +358,8 @@ void decide_data(){
     }else{
         bad_bit_counter++;
     }
+    adc_data_idx++;
+    ADC_signal.accumulator = 0;
     bit_counter++;
 }
 
@@ -383,8 +383,7 @@ char start_stats_spam = FALSE;
 void check_protocol(){
     if(communications_state == waiting && (usb_rx_fifo_ptr->empty == FALSE || start_stats_spam == TRUE)){
         communications_state = sending_preamble;
-        high_accumulator = 0;
-        low_accumulator = 0;
+
 
         reset_rom_flags_phases(&ADC_signal);
         reset_rom_flags_phases(&DAC_signal);
@@ -413,14 +412,13 @@ void check_protocol(){
                 dac_data++;
                 if(!(*dac_data)){
                     calibrate_decision_boundary();
-                    FIFO_read_byte(usb_rx_fifo_ptr,&dac_data_buffer[0]);
-                    dac_data = &dac_data_buffer[0];
-
                     if(start_stats_spam == FALSE){
                         communications_state = sending_data;
+                        FIFO_read_byte(usb_rx_fifo_ptr,&dac_data_buffer[0]);
+                        dac_data = &dac_data_buffer[0];
                     }else{
                         communications_state = spam_stats;
-
+                        dac_data = &spam;
                     }
                 }
             }
@@ -432,8 +430,8 @@ void check_protocol(){
             reset_rom_flags_phases(&ADC_signal);
             reset_rom_flags_phases(&DAC_signal);
             DAC_signal.accumulator = 0;
-            dac_data_idx++;
             decide_data();
+            dac_data_idx++;
             if(dac_data_idx > ASCII_LENGTH){ //if we increment, will it rollover?
                 send_rx_byte();
                 dac_data_idx = 0;
@@ -458,8 +456,9 @@ void check_protocol(){
            reset_rom_flags_phases(&ADC_signal);
            reset_rom_flags_phases(&DAC_signal);
            DAC_signal.accumulator = 0;
-           dac_data_idx++;
            decide_data();
+           dac_data_idx++;
+
            if(dac_data_idx > ASCII_LENGTH){ //if we increment, will it rollover?
                adc_data = 0;
                dac_data_idx = 0;
@@ -470,10 +469,11 @@ void check_protocol(){
 }
 
 
-
+char clear_to_rtc = TRUE;
 void check_stats(){
-    if(bit_rate_flag >= 1){
+    if(clear_to_rtc == FALSE){
         bit_rate_flag = 0;
+
         char * ttbuf = int_buf;
 
         good_bit_counter = 0;
@@ -486,6 +486,8 @@ void check_stats(){
             append_str_to_FIFO(usb_tx_fifo_ptr,ttbuf);
             ttbuf++;
         }
+        sprintf(int_buf,"\r\nBye\n\0");
+        clear_to_rtc = TRUE;
     }
 }
 
@@ -593,6 +595,7 @@ void __attribute__ ((interrupt(ADC_VECTOR))) ADC_ISR (void)
     }
 }
 int last_bit_count = 0xbeef;
+unsigned int seconds_ctr=0;
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = RTC_VECTOR
 __interrupt void RTC_ISR(void)
@@ -606,17 +609,22 @@ void __attribute__ ((interrupt(RTC_VECTOR))) RTC_ISR (void)
     {
         case RTCIV_NONE : break;            // No interrupt pending
         case RTCIV_RTCIF:                   // RTC Overflow
-            if(bit_counter > 0){
-                bit_rate_flag++;
-                if(last_bit_count != bit_counter){
-                    last_bit_count = bit_counter;
-                }else{
-                    sprintf(int_buf,"\r\nrb = %d/%d s Good:Bad %d:%d\nPower High = %d\nPower Low = %d\r\n",
-                            bit_counter,bit_rate_flag,good_bit_counter,bad_bit_counter,high_accumulator,low_accumulator);
-                    last_bit_count = 0xbeef;
+            if(clear_to_rtc == 1){
+                if(seconds_ctr == 0 && bit_counter > 0){
+                    seconds_ctr++;
+                }else if (seconds_ctr == 2){
+                        sprintf(int_buf,"\r\nGood:Bad %d:%d\nrb=%d/s\n",
+                                good_bit_counter,bad_bit_counter,(bit_counter>>1));
+                        clear_to_rtc = FALSE;
+                        seconds_ctr = 0;
+
+                }else if(seconds_ctr > 0){
+                        seconds_ctr++;
+
                 }
             }
             break;
+
         default:          break;
     }
 }
