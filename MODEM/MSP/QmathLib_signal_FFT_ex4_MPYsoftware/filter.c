@@ -46,7 +46,7 @@ void initialize_filter_clk(void){
     TB1CCTL2 = OUTMOD_7 ;
 
     //default: 1 MHz
-    set_filter_clock_period(2);
+    set_filter_clock_period(20);
     TB1CTL = TBSSEL__SMCLK | MC__UP | TBCLR; // SMCLK, up mode, clear TBR
 }
 

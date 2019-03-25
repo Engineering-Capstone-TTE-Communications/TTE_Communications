@@ -4,7 +4,6 @@
 #include <stdint.h>
 #include "usb.h"
 #include "filter.h"
-#include "reciever_pipeline.h"
 
 typedef struct sine_ROM {
     unsigned int          phase;
@@ -73,7 +72,7 @@ void append_str_to_FIFO(FIFO * fifo_ptr,char * char_buffer){
 const char escape_character = '\\';
 const char preamble_code[] = {0x55,0x55,0x55,0x55,NULL};
 const char exit_code[] = {'b','\\','y','\\','e','\\',NULL};
-const char spam[] = {'y','e','e','t',NULL};
+const char spam[] = {0xff,'e','e','t',NULL};
 
 #define decision_boundary_scalar_log2 5
 
@@ -340,6 +339,65 @@ void reset_rom_flags_phases(sine_ROM * ROM){
 
 }
 
+void config_sac2_as_PGA(void){
+    P3SEL0 |=  BIT1 + BIT3;
+    P3SEL1 |= BIT1 + BIT3;
+
+    //Configure SAC as PGA's
+    SAC2OA = NMUXEN + PMUXEN; //Enable OA +/- port multiplexers
+    SAC2OA |= PSEL_0; //Positive input is from external port
+    SAC2OA |= NSEL_1; //Negative input is from PGA
+
+    //MSP430FR2xx Users guide pg. 533
+
+    //MSP430FR2xx Users guide pg. 523
+    SAC2PGA = MSEL_2 | GAIN0 | GAIN1; //Gain = 5, nonlinear, need table
+   // SAC2PGA = MSEL_2 | GAIN2 | GAIN0 | GAIN1; //Gain = 5, nonlinear, need table
+
+    //Enable SAC's & OA's
+    SAC2OA |= SACEN + OAEN;
+}
+void config_sac_as_PGA(void){
+    P3SEL0 |=  BIT1 + BIT3;
+    P3SEL1 |= BIT1 + BIT3;
+
+    //Configure SAC as PGA's
+    SAC1OA = NMUXEN + PMUXEN; //Enable OA +/- port multiplexers
+    SAC1OA |= PSEL_0; //Positive input is from external port
+    SAC1OA |= NSEL_1; //Negative input is from PGA
+
+    //MSP430FR2xx Users guide pg. 523
+    SAC1PGA = MSEL_2 | GAIN0 | GAIN1; //Gain = 5, nonlinear, need table
+
+    //SAC2PGA = MSEL_2 | GAIN2 | GAIN0 | GAIN1; //Gain = 5, nonlinear, need table
+
+    //Enable SAC's & OA's
+    SAC1OA |= SACEN + OAEN;
+}
+
+void config_sac0_as_PGA(void){
+    P1SEL0 |=  BIT1 + BIT3;
+    P1SEL1 |= BIT1 + BIT3;
+
+    //Configure SAC as PGA's
+    SAC0OA = NMUXEN + PMUXEN; //Enable OA +/- port multiplexers
+    SAC0OA |= PSEL_0; //Positive input is from external port
+    SAC0OA |= NSEL_1; //Negative input is from PGA
+
+    //MSP430FR2xx Users guide pg. 533
+
+    //MSP430FR2xx Users guide pg. 523
+    SAC0PGA = MSEL_2 |GAIN2;//2 | GAIN1; //Gain = 5, nonlinear, need table
+    //SAC0PGA = MSEL_2 | GAIN2 | GAIN0 | GAIN1;
+    //Enable SAC's & OA's
+    SAC0OA |= SACEN + OAEN;
+}
+
+void config_reciever(void){
+    config_sac0_as_PGA();
+    config_sac2_as_PGA();
+    //config_reciever_ADC();
+}
 void setup_roms(){
     ADC_signal.max_phase = adc_SPS;
     DAC_signal.max_phase = dac_SPS;
@@ -511,14 +569,13 @@ int main(void){
     stop_watchdog_timer();
 
     setup_adc();
-    config_reciever();
-
     setup_dac();
     setup_roms();
     set_8mhz_clk();
     setup_rtc();
     init_USB();
     initialize_filter_clk();
+    config_reciever();
 
     reset_rom_flags_phases(&ADC_signal);
     reset_rom_flags_phases(&DAC_signal);
@@ -538,14 +595,8 @@ int main(void){
     }
 }
 
-#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = SAC1_SAC3_VECTOR
 __interrupt void SAC3_ISR(void)
-#elif defined(__GNUC__)
-void __attribute__ ((interrupt(SAC3_SAC2_VECTOR))) SAC3_ISR (void)
-#else
-#error Compiler not supported!
-#endif
 {
   switch(__even_in_range(SAC3IV,SACIV_4))
   {

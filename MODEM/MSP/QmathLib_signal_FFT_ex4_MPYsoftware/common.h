@@ -20,10 +20,10 @@
 #define PI      3.1415926536
 
 #define dac_PRESCALAR 500
-#define dac_SPS 10
+#define dac_SPS 20
 
 #define adc_PRESCALAR 500
-#define adc_SPS 10
+#define adc_SPS 20
 
 //Shouldn't be #defines ar they are dynamic :C
 #define adc_downsample_factor 100
