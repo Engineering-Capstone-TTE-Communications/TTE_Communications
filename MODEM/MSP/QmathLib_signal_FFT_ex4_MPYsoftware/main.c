@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include "usb.h"
 #include "filter.h"
-
+#include "reciever_pipeline.h"
 
 typedef struct sine_ROM {
     unsigned int          phase;
@@ -233,8 +233,8 @@ void set_8mhz_clk(void)
 void setup_dac(){
     WDTCTL = WDTPW + WDTHOLD;                 // Stop watch dog timer
 
-     P1SEL0 |= BIT1;                           // Select P1.1 as OA0O function
-     P1SEL1 |= BIT1;                           // OA is used as buffer for DAC
+     P3SEL0 |= BIT5 | BIT6 | BIT7;                           // Select P1.1 as OA0O function
+     P3SEL1  |= BIT5 | BIT6 | BIT7;                             // OA is used as buffer for DAC
 
      PM5CTL0 &= ~LOCKLPM5;                     // Disable the GPIO power-on default high-impedance mode
                                                // to activate previously configured port settings
@@ -244,13 +244,13 @@ void setup_dac(){
      PMMCTL2 = INTREFEN | REFVSEL_2;           // Enable internal 2.5V reference
      while(!(PMMCTL2 & REFGENRDY));            // Poll till internal reference settles
 
-     SAC0DAC = DACSREF_1 + DACLSEL_2 + DACIE;  // Select int Vref as DAC reference
-     //SAC0DAT = 0;                       // Initial DAC data
-     SAC0DAC |= DACEN;                         // Enable DAC
+     SAC3DAC = DACSREF_1 + DACLSEL_2 + DACIE;  // Select int Vref as DAC reference
+     //SAC3DAT = 0;                       // Initial DAC data
+     SAC3DAC |= DACEN;                         // Enable DAC
 
-     SAC0OA = NMUXEN + PMUXEN + PSEL_1 + NSEL_1;//Select positive and negative pin input
-     SAC0PGA = MSEL_1;                          // Set OA as buffer mode
-     SAC0OA |= SACEN + OAEN;                    // Enable SAC and OA
+     SAC3OA = NMUXEN + PMUXEN + PSEL_1 + NSEL_1;//Select positive and negative pin input
+     SAC3PGA = MSEL_1;                          // Set OA as buffer mode
+     SAC3OA |= SACEN + OAEN;                    // Enable SAC and OA
 
      // Use TB2.1 as DAC hardware trigger
      TB2CCR0 = dac_PRESCALAR;                           // PWM Period/2
@@ -511,6 +511,8 @@ int main(void){
     stop_watchdog_timer();
 
     setup_adc();
+    config_reciever();
+
     setup_dac();
     setup_roms();
     set_8mhz_clk();
@@ -537,20 +539,20 @@ int main(void){
 }
 
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
-#pragma vector = SAC0_SAC2_VECTOR
-__interrupt void SAC0_ISR(void)
+#pragma vector = SAC1_SAC3_VECTOR
+__interrupt void SAC3_ISR(void)
 #elif defined(__GNUC__)
-void __attribute__ ((interrupt(SAC0_SAC2_VECTOR))) SAC0_ISR (void)
+void __attribute__ ((interrupt(SAC3_SAC2_VECTOR))) SAC3_ISR (void)
 #else
 #error Compiler not supported!
 #endif
 {
-  switch(__even_in_range(SAC0IV,SACIV_4))
+  switch(__even_in_range(SAC3IV,SACIV_4))
   {
     case SACIV_0: break;
     case SACIV_2: break;
     case SACIV_4:
-        SAC0DAT = DAC_signal.buffer;
+        SAC3DAT = DAC_signal.buffer;
         DAC_signal.new_buffer_flag++;
         DAC_signal.phase++;
     default: break;
