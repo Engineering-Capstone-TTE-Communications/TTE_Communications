@@ -265,7 +265,6 @@ void init_adc_dac_clks(){
     TB1CCR1 = (adc_PRESCALAR>>1);                                         // PWM Period
     TB1CCTL1 = OUTMOD_6;                                      // TB1CCR0 toggle
     TB1CTL = TBSSEL__SMCLK | MC_1 | TBCLR;                     // ACLK, up mode)
-
     __delay_cycles(adc_PRESCALAR>>1);                                      // Delay for reference settling
 
     TB2CCR0 = dac_PRESCALAR;                           // PWM Period/2
@@ -517,6 +516,7 @@ int main(void){
     set_8mhz_clk();
     setup_rtc();
     init_USB();
+    initialize_filter_clk();
 
     reset_rom_flags_phases(&ADC_signal);
     reset_rom_flags_phases(&DAC_signal);
