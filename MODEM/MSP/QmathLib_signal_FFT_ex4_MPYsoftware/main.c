@@ -101,32 +101,21 @@ void spam_usb(){
 }
 
 void setup_adc(){
-
     // Configure ADC A1 pin
     P1SEL0 |= BIT1;
     P1SEL1 |= BIT1;
-
-    // Configure XT1 oscillator
-    P2SEL1 |= BIT6 | BIT7;                                    // P2.6~P2.7: crystal pins
 
     // Disable the GPIO power-on default high-impedance mode to activate
     // previously configured port settings
     PM5CTL0 &= ~LOCKLPM5;
 
-    CSCTL4 = SELA__XT1CLK;                                    // Set ACLK = XT1; MCLK = SMCLK = DCO
-    do
-    {
-        CSCTL7 &= ~(XT1OFFG | DCOFFG);                        // Clear XT1 and DCO fault flag
-        SFRIFG1 &= ~OFIFG;
-    }while (SFRIFG1 & OFIFG);                                 // Test oscillator fault flag
-
-    // Configure ADC
-    ADCCTL0 |= ADCON | ADCMSC;                                // ADCON
-    ADCCTL1 |= ADCSHS_2 | ADCCONSEQ_2 | ADCSSEL_3;                        // repeat single channel; TB1.1 trig sample start
-    ADCCTL2 &= ~ADCRES;                                       // clear ADCRES in ADCCTL
-    ADCCTL2 |= ADCRES_2;                                      // 12-bit conversion results
-    ADCMCTL0 |= ADCINCH_0;                                    // A1 ADC input select; Vref=1.5V
-    ADCIE |= ADCIE0;                                          // Enable ADC conv complete interrupt
+    // Configure ADC12
+    ADCCTL0 |= ADCSHT_5 | ADCON;                             // ADCON, S&H=16 ADC clks
+    ADCCTL1 |= ADCSHP;                                       // ADCCLK = MODOSC; sampling timer
+    ADCCTL2 &= ~ADCRES;                                      // clear ADCRES in ADCCTL
+    ADCCTL2 |= ADCRES_2;                                     // 12-bit conversion results
+    ADCMCTL0 |= ADCINCH_1;                                   // A1 ADC input select; Vref=AVCC
+    ADCIE |= ADCIE0;                                         // Enable ADC conv complete interrupt
 
     // Configure reference
     PMMCTL0_H = PMMPW_H;                                      // Unlock the PMM registers
@@ -134,11 +123,7 @@ void setup_adc(){
     __delay_cycles(400);                                      // Delay for reference settling
     ADCCTL0 |= ADCENC;                                        // ADC Enable
 
-    // ADC conversion trigger signal - TimerB1.1 (32ms ON-period)
-    TB1CCR0 = adc_PRESCALAR;                                         // PWM Period
-    TB1CCR1 = (adc_PRESCALAR>>1);                                          // TB1.1 ADC trigger
-    TB1CCTL1 = OUTMOD_6;                                      // TB1CCR0 toggle
-    TB1CTL = TBSSEL__SMCLK | MC_1 | TBCLR;                     // ACLK, up mode)
+
 }
 
 #define MCLK_FREQ_MHZ 8                     // MCLK = 8MHz
@@ -237,13 +222,14 @@ void setup_dac(){
 
      PM5CTL0 &= ~LOCKLPM5;                     // Disable the GPIO power-on default high-impedance mode
                                                // to activate previously configured port settings
-
+/*
      // Configure reference module
      PMMCTL0_H = PMMPW_H;                      // Unlock the PMM registers
      PMMCTL2 = INTREFEN | REFVSEL_2;           // Enable internal 2.5V reference
      while(!(PMMCTL2 & REFGENRDY));            // Poll till internal reference settles
 
-     SAC3DAC = DACSREF_1 + DACLSEL_2 + DACIE;  // Select int Vref as DAC reference
+     SAC3DAC = DACSREF_1;// + DACLSEL_2 + DACIE;  // Select int Vref as DAC reference
+     */
      //SAC3DAT = 0;                       // Initial DAC data
      SAC3DAC |= DACEN;                         // Enable DAC
 
@@ -251,11 +237,6 @@ void setup_dac(){
      SAC3PGA = MSEL_1;                          // Set OA as buffer mode
      SAC3OA |= SACEN + OAEN;                    // Enable SAC and OA
 
-     // Use TB2.1 as DAC hardware trigger
-     TB2CCR0 = dac_PRESCALAR;                           // PWM Period/2
-     TB2CCTL1 = OUTMOD_6;                       // TBCCR1 toggle/set
-     TB2CCR1 = (2);                              // TBCCR1 PWM duty cycle
-     TB2CTL = TBSSEL__SMCLK | MC_1 | TBCLR;     // SMCLK, up mode, clear TBR
      DAC_signal = generate_sine_ROM();
 }
 
@@ -264,12 +245,20 @@ void init_adc_dac_clks(){
     TB1CCR1 = (adc_PRESCALAR>>1);                                         // PWM Period
     TB1CCTL1 = OUTMOD_6;                                      // TB1CCR0 toggle
     TB1CTL = TBSSEL__SMCLK | MC_1 | TBCLR;                     // ACLK, up mode)
-    __delay_cycles(adc_PRESCALAR>>1);                                      // Delay for reference settling
+/*
+   // __delay_cycles(adc_PRESCALAR>>1);                                      // Delay for reference settling
 
     TB2CCR0 = dac_PRESCALAR;                           // PWM Period/2
-    TB2CCTL1 =  (dac_PRESCALAR>>1);                       // TBCCR1 toggle/set
+    TB2CCR1 =  (dac_PRESCALAR>>1);                       // TBCCR1 toggle/set
     TB2CCTL1 = OUTMOD_6;                                      // TB1CCR0 toggle
     TB2CTL = TBSSEL__SMCLK | MC_1 | TBCLR;     // SMCLK, up mode, clear TBR
+  */
+    TB2CCR0 = 10000;                           // PWM Period/2
+      TB2CCR1 =  10;                       // TBCCR1 toggle/set
+      TB2CCTL1 = OUTMOD_6;                                      // TB1CCR0 toggle
+      TB2CTL = TBSSEL__SMCLK | MC_1 | TBCLR;     // SMCLK, up mode, clear TBR
+
+
 }
 
 char * dac_data=NULL;
@@ -545,7 +534,7 @@ void check_protocol(){
 }
 
 char mem_buf = TRUE;
-
+unsigned int dac_ramp;
 char clear_to_rtc = TRUE;
 void check_stats(){
     if(clear_to_rtc == FALSE){
@@ -572,18 +561,23 @@ int main(void){
     setup_dac();
     setup_roms();
     set_8mhz_clk();
-    setup_rtc();
+    //setup_rtc();
     init_USB();
     initialize_filter_clk();
-    config_reciever();
+
+    //config_reciever();
+    init_adc_dac_clks();
 
     reset_rom_flags_phases(&ADC_signal);
     reset_rom_flags_phases(&DAC_signal);
 
     enable_interrupts();
     start_stats_spam = TRUE;
-
+    ADCCTL0 |= ADCENC | ADCSC;
     while(1){
+        __bis_SR_register(LPM0_bits);                  // LPM0, ADC_ISR will force exit
+        ADCCTL0 |= ADCENC | ADCSC;
+        /*
         if(usb_tx_fifo_ptr->empty == FALSE){
            dump_USB_FIFO(usb_tx_fifo_ptr);
         }
@@ -592,9 +586,10 @@ int main(void){
 
         check_protocol();
         check_stats();
+        */
     }
 }
-
+/*
 #pragma vector = SAC1_SAC3_VECTOR
 __interrupt void SAC3_ISR(void)
 {
@@ -603,13 +598,16 @@ __interrupt void SAC3_ISR(void)
     case SACIV_0: break;
     case SACIV_2: break;
     case SACIV_4:
-        SAC3DAT = DAC_signal.buffer;
+        SAC3DAT = dac_ramp;//DAC_signal.buffer;
+        __no_operation();
+        dac_ramp++;
         DAC_signal.new_buffer_flag++;
         DAC_signal.phase++;
     default: break;
   }
 }
-
+*/
+int diff;
 
 // ADC interrupt service routine
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
@@ -637,16 +635,22 @@ void __attribute__ ((interrupt(ADC_VECTOR))) ADC_ISR (void)
             break;
         case ADCIV_ADCIFG:
             ADC_signal.buffer = ADCMEM0;
-
+            diff = dac_ramp - ADC_signal.buffer;
+            __no_operation();
             ADC_signal.buffer = ADC_signal.buffer*ADC_signal.buffer;
             ADC_signal.new_buffer_flag++;
             ADC_signal.phase++;
-            ADCIFG = 0;
+            dac_ramp++;
+            if(dac_ramp > 0xfff)
+                dac_ramp = 0;
+            SAC3DAT = dac_ramp;//DAC_signal.buffer;
+            __bic_SR_register_on_exit(LPM0_bits);            // Clear CPUOFF bit from LPM0
             break;                                           // Clear CPUOFF bit from 0(SR)
         default:
             break;
     }
 }
+
 int last_bit_count = 0xbeef;
 unsigned int seconds_ctr=0;
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
