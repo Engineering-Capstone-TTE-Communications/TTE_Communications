@@ -100,6 +100,7 @@ void spam_usb(){
     }
 }
 
+
 void setup_adc(){
     // Configure ADC A1 pin
     P1SEL0 |= BIT1;
@@ -110,17 +111,14 @@ void setup_adc(){
     PM5CTL0 &= ~LOCKLPM5;
 
     // Configure ADC12
-    ADCCTL0 |= ADCSHT_5 | ADCON;                             // ADCON, S&H=16 ADC clks
-    ADCCTL1 |= ADCSHP;                                       // ADCCLK = MODOSC; sampling timer
+    ADCCTL0 |= ADCSHT_5 | ADCON | ADCMSC;                             // ADCON, S&H=16 ADC clks
+    ADCCTL1 |= ADCSHS_2 | ADCCONSEQ_2;                        // repeat single channel; TB1.1 trig sample start
+    //ADCCTL1 |= ADCSHP;                                       // ADCCLK = MODOSC; sampling timer
     ADCCTL2 &= ~ADCRES;                                      // clear ADCRES in ADCCTL
     ADCCTL2 |= ADCRES_2;                                     // 12-bit conversion results
     ADCMCTL0 |= ADCINCH_1;                                   // A1 ADC input select; Vref=AVCC
     ADCIE |= ADCIE0;                                         // Enable ADC conv complete interrupt
 
-    // Configure reference
-    PMMCTL0_H = PMMPW_H;                                      // Unlock the PMM registers
-    PMMCTL2 |= INTREFEN | REFVSEL_0;                          // Enable internal 1.5V reference
-    __delay_cycles(400);                                      // Delay for reference settling
     ADCCTL0 |= ADCENC;                                        // ADC Enable
 
 
@@ -434,11 +432,10 @@ char communications_state = waiting;
 int i;
 char start_stats_spam = FALSE;
 char serial_buf[256];
+
 void check_protocol(){
     if(communications_state == waiting && (usb_rx_fifo_ptr->empty == FALSE || start_stats_spam == TRUE)){
         communications_state = sending_preamble;
-
-
         reset_rom_flags_phases(&ADC_signal);
         reset_rom_flags_phases(&DAC_signal);
         adc_data = 0;
@@ -539,7 +536,7 @@ char clear_to_rtc = TRUE;
 void check_stats(){
     if(clear_to_rtc == FALSE){
         char * ttbuf = &int_buf;
-
+       __no_operation();
         good_bit_counter = 0;
         bad_bit_counter = 0;
 
@@ -561,7 +558,7 @@ int main(void){
     setup_dac();
     setup_roms();
     set_8mhz_clk();
-    //setup_rtc();
+   // setup_rtc();
     init_USB();
     initialize_filter_clk();
 
@@ -572,12 +569,12 @@ int main(void){
     reset_rom_flags_phases(&DAC_signal);
 
     enable_interrupts();
+//    communications_state = spam_stats;
     start_stats_spam = TRUE;
-    ADCCTL0 |= ADCENC | ADCSC;
+
     while(1){
         __bis_SR_register(LPM0_bits);                  // LPM0, ADC_ISR will force exit
-        ADCCTL0 |= ADCENC | ADCSC;
-        /*
+
         if(usb_tx_fifo_ptr->empty == FALSE){
            dump_USB_FIFO(usb_tx_fifo_ptr);
         }
@@ -586,9 +583,9 @@ int main(void){
 
         check_protocol();
         check_stats();
-        */
     }
 }
+
 /*
 #pragma vector = SAC1_SAC3_VECTOR
 __interrupt void SAC3_ISR(void)
@@ -607,6 +604,7 @@ __interrupt void SAC3_ISR(void)
   }
 }
 */
+
 int diff;
 
 // ADC interrupt service routine
@@ -635,15 +633,14 @@ void __attribute__ ((interrupt(ADC_VECTOR))) ADC_ISR (void)
             break;
         case ADCIV_ADCIFG:
             ADC_signal.buffer = ADCMEM0;
-            diff = dac_ramp - ADC_signal.buffer;
-            __no_operation();
             ADC_signal.buffer = ADC_signal.buffer*ADC_signal.buffer;
             ADC_signal.new_buffer_flag++;
             ADC_signal.phase++;
-            dac_ramp++;
-            if(dac_ramp > 0xfff)
-                dac_ramp = 0;
-            SAC3DAT = dac_ramp;//DAC_signal.buffer;
+
+            SAC3DAT = DAC_signal.buffer;
+            DAC_signal.new_buffer_flag++;
+            DAC_signal.phase++;
+
             __bic_SR_register_on_exit(LPM0_bits);            // Clear CPUOFF bit from LPM0
             break;                                           // Clear CPUOFF bit from 0(SR)
         default:
@@ -666,6 +663,8 @@ void __attribute__ ((interrupt(RTC_VECTOR))) RTC_ISR (void)
     {
         case RTCIV_NONE : break;            // No interrupt pending
         case RTCIV_RTCIF:                   // RTC Overflow
+            __no_operation();
+
             if(clear_to_rtc == TRUE){
                 if(seconds_ctr == 0 && bit_counter > 0){
                     seconds_ctr++;

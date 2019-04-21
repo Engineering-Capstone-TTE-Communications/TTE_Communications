@@ -74,6 +74,49 @@ int main(void)
 {
     WDTCTL = WDTPW | WDTHOLD;                                 // Stop WDT
 
+    // Configure GPIO
+    P1DIR |= BIT2;                                            // Set P1.2 to output direction
+    P1OUT &= ~BIT2;                                           // Clear P1.2
+
+    // Configure ADC A1 pin
+    P1SEL0 |= BIT1;
+    P1SEL1 |= BIT1;
+
+    // Configure XT1 oscillator
+    P2SEL1 |= BIT6 | BIT7;                                    // P2.6~P2.7: crystal pins
+
+    // Disable the GPIO power-on default high-impedance mode to activate
+    // previously configured port settings
+    PM5CTL0 &= ~LOCKLPM5;
+
+    CSCTL4 = SELA__XT1CLK;                                    // Set ACLK = XT1; MCLK = SMCLK = DCO
+    do
+    {
+        CSCTL7 &= ~(XT1OFFG | DCOFFG);                        // Clear XT1 and DCO fault flag
+        SFRIFG1 &= ~OFIFG;
+    }while (SFRIFG1 & OFIFG);                                 // Test oscillator fault flag
+
+    // Configure ADC
+    ADCCTL0 |= ADCON | ADCMSC;                                // ADCON
+    ADCCTL1 |= ADCSHS_2 | ADCCONSEQ_2;                        // repeat single channel; TB1.1 trig sample start
+    ADCCTL2 &= ~ADCRES;                                       // clear ADCRES in ADCCTL
+    ADCCTL2 |= ADCRES_2;                                      // 12-bit conversion results
+    ADCMCTL0 |= ADCINCH_1 | ADCSREF_1;                        // A1 ADC input select; Vref=1.5V
+    ADCIE |= ADCIE0;                                          // Enable ADC conv complete interrupt
+
+    // Configure reference
+    PMMCTL0_H = PMMPW_H;                                      // Unlock the PMM registers
+    PMMCTL2 |= INTREFEN | REFVSEL_0;                          // Enable internal 1.5V reference
+    __delay_cycles(400);                                      // Delay for reference settling
+
+    ADCCTL0 |= ADCENC;                                        // ADC Enable
+
+
+    // ADC conversion trigger signal - TimerB1.1 (32ms ON-period)
+    TB1CCR0 = 1024-1;                                         // PWM Period
+    TB1CCR1 = 512-1;                                          // TB1.1 ADC trigger
+    TB1CCTL1 = OUTMOD_4;                                      // TB1CCR0 toggle
+    TB1CTL = TBSSEL__ACLK | MC_1 | TBCLR;                     // ACLK, up mode
 
     __bis_SR_register(LPM0_bits | GIE);                       // Enter LPM3 w/ interrupts
 }
