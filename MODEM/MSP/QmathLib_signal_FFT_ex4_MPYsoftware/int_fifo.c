@@ -5,17 +5,17 @@
  *      Author: donald
  */
 
-#include "int_fifo.h"
 #include "common.h"
+#include "int_fifo.h"
 
-void init_uint_FIFO(uint_FIFO * fifo){
+void init_ulong_FIFO(ulong_FIFO * fifo){
     fifo->head = &fifo->data[0];
     fifo->tail = &fifo->data[0];
     fifo->empty = TRUE;
 }
 
 //overwrites oldest data
-void uint_FIFO_append_byte(uint_FIFO * fifo, unsigned int * data_in){
+void ulong_FIFO_append_byte(ulong_FIFO * fifo, unsigned long * data_in){
     //Check current FIFO state
     fifo->empty = FALSE;
 
@@ -35,7 +35,7 @@ void uint_FIFO_append_byte(uint_FIFO * fifo, unsigned int * data_in){
     }
 }
 
-void uint_FIFO_read_byte(uint_FIFO * fifo,  unsigned int * output_buffer){
+void ulong_FIFO_read_byte(ulong_FIFO * fifo,  unsigned long * output_buffer){
     //Check current FIFO state
     fifo->full = FALSE;
 
