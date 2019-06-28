@@ -1,0 +1,33 @@
+html, body {
+    height: 100%;
+    margin: 0;
+
+}
+.intro_background{
+    height: 100%;
+    width: 100%;
+    background-color: #E85F5C;
+    color: #564E58;
+    text-align: center;
+}
+.enter_form{
+    position:fixed;
+    top:45%;
+    padding: 10 10 10 10;
+    left:30%;
+    width:40%;
+    height:10%;
+}
+input[type=text], select {
+    height:100%;
+    width:100%;
+    font-size: 10vh;
+
+
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+   
