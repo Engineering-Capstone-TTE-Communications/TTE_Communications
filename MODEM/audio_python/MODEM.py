@@ -244,10 +244,10 @@ class audible_MODEM:
 
                 #print(self.sym_io_ctr)
                 if(self.sym_io_ctr == 1): #get the first going so u can speed run
-                    #rx_phy = tx_phy
-                    rx_phy = sd.playrec(tx_phy, fs, channels=1)
+                    rx_phy = tx_phy
+                    #rx_phy = sd.playrec(tx_phy, fs, channels=1)
                     prev_tx_sym = tx_sym
-                    sd.wait()
+                    #sd.wait()
                     continue
                 #elif(self.sym_io_ctr == num_syms): #Just Process the last (no more syms anyway)
                 elif(sym_count == num_syms and self.sym_io_ctr - ref_io_cnt == len(tx)):
@@ -256,8 +256,8 @@ class audible_MODEM:
                 else:
                     sd.wait() #processed last bit & still txin
                     rx_phy_prev = rx_phy
-                    #rx_phy = tx_phy
-                    rx_phy = sd.playrec(tx_phy, fs, channels=1)
+                    rx_phy = tx_phy
+                    #rx_phy = sd.playrec(tx_phy, fs, channels=1)
 
                 [decision_data, best_decision_integral] = self.demodulate_data(rx_phy_prev)
                 
